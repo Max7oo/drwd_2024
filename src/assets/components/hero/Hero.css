@@ -1,0 +1,48 @@
+#hero__title {
+  display: flex;
+  align-items: center;
+
+  min-height: 50vh;
+  margin: 0px var(--small-padding);
+}
+
+#hero__image {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1;
+  max-width: 100vw;
+
+  background-image: url(../../images/hero__mobile.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: var(--radius);
+
+  transform: rotate(-4deg);
+}
+
+#hero__description__bg {
+  position: absolute;
+  z-index: -1;
+
+  height: calc(50vw + (2 * var(--large-padding)) + 250px);
+  width: calc(100vw + (2 * var(--small-padding)));
+  margin-top: -50vw;
+  margin-left: calc(-1 * var(--small-padding));
+
+  background-color: var(--bg-black);
+
+  border-radius: var(--radius);
+
+  transform: rotate(4deg);
+}
+
+#hero__description {
+  position: relative;
+  z-index: 1;
+  height: 250px;
+  padding: var(--large-padding) var(--small-padding) var(--large-padding)
+    var(--small-padding);
+
+  color: var(--text-white);
+}

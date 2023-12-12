@@ -1,0 +1,123 @@
+/* General settings */
+:root {
+  --bg-grey: #e6e2de;
+  --bg-black: #181716;
+  --text-white: #ffffff;
+  --text-black: #333333;
+  --highlight: #06a0f6;
+  --active: #ff5908;
+
+  --mini-padding: 15px;
+  --small-padding: 25px;
+  --large-padding: 100px;
+
+  --radius: 10px;
+}
+
+:root {
+  background-color: var(--bg-grey);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* font-faces */
+@font-face {
+  font-family: "PP Cirka";
+  src: url(./assets/fonts/PPCirka-Bold.woff2) format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url(./assets/fonts/NeueHaasDisplay-Roman.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url(./assets/fonts/NeueHaasDisplay-Medium.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Site wide declarations */
+/* Text */
+h1 {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: var(--text-black);
+}
+
+h1 span {
+  font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  color: var(--highlight);
+}
+
+p {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+b {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+/* UI elements */
+button {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--text-white);
+
+  padding: var(--mini-padding) var(--small-padding);
+  background-color: var(--highlight);
+  border: 0;
+  border-radius: var(--radius);
+}
+
+button:last-child {
+  padding-right: 0px;
+}
+
+button.secondary {
+  color: var(--text-black);
+
+  background-color: transparent;
+}
+
+button.tertiary {
+  color: var(--text-black);
+
+  background-color: var(--text-white);
+}
