@@ -32,6 +32,7 @@ body {
   font: inherit;
   vertical-align: baseline;
   max-width: 100%;
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -71,6 +72,9 @@ h1 {
 }
 
 h1 span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+h1 span.highlight {
   font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   font-weight: bold;
@@ -104,6 +108,18 @@ button {
   background-color: var(--highlight);
   border: 0;
   border-radius: var(--radius);
+
+  transition: transform 330ms ease-in-out;
+}
+
+button.primary:hover {
+  cursor: pointer;
+
+  color: var(--text-black);
+  background-color: var(--active);
+
+  transform: rotate(4deg);
+  transition: transform 330ms ease-in-out;
 }
 
 button:last-child {
@@ -112,12 +128,37 @@ button:last-child {
 
 button.secondary {
   color: var(--text-black);
-
   background-color: transparent;
+}
+
+button.secondary p {
+  margin: 0;
+  position: relative;
+}
+
+button.secondary:hover {
+  cursor: pointer;
+}
+
+button.secondary p:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--active);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+button.secondary:hover p:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 button.tertiary {
   color: var(--text-black);
-
   background-color: var(--text-white);
 }
