@@ -8,6 +8,7 @@ import logo from "../../images/icon.svg";
 function NavBar() {
   const context = useRef(null);
   const nav = useRef(null);
+  const fixedNav = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -19,18 +20,19 @@ function NavBar() {
         { y: "-100%" },
         { y: "0%", ease: Power1.easeInOut }
       );
-      //   gsap.to("#nav", {
-      //     scrollTrigger: {
-      //       trigger: "#nav",
-      //       start: "200% top",
-      //       //   end: "200% top",
-      //       //   scrub: true,
-      //       markers: true,
-      //     },
-      //     // top: 0,
-      //     position: "fixed",
-      //     backgroundColor: "var(--text-white)",
-      //   });
+      gsap.to("#fixedNav", {
+        scrollTrigger: {
+          trigger: "#fixedNav",
+          start: "500% top",
+          //   end: "200% top",
+          //   scrub: true,
+          markers: true,
+          toggleActions: "play none none reverse",
+        },
+        backgroundColor: "#fff",
+        marginTop: 0,
+        position: "fixed",
+      });
     }, context);
 
     return () => ctx.revert();
@@ -38,6 +40,15 @@ function NavBar() {
   return (
     <div ref={context}>
       <nav id="nav" ref={nav}>
+        <img src={logo} alt="De Ruiter Webdevelopment Logo" />
+        <div>
+          <button className="primary">Contact</button>
+          <button className="secondary">
+            <p>Menu</p>
+          </button>
+        </div>
+      </nav>
+      <nav id="fixedNav" ref={fixedNav}>
         <img src={logo} alt="De Ruiter Webdevelopment Logo" />
         <div>
           <button className="primary">Contact</button>

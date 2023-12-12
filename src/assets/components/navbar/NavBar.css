@@ -1,8 +1,10 @@
 nav {
-  position: relative;
+  z-index: 1000;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: calc(100% - 50px);
 
   padding: var(--mini-padding) var(--small-padding);
 }
@@ -14,4 +16,9 @@ nav img {
 nav div {
   display: flex;
   gap: var(--mini-padding);
+}
+
+#fixedNav {
+  position: absolute;
+  margin-top: -90px;
 }

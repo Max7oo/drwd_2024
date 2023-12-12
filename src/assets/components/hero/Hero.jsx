@@ -35,11 +35,11 @@ function Hero() {
         chars,
         {
           y: 100,
-          opacity: 0,
+          // opacity: 0,
         },
         {
           y: 0,
-          opacity: 1,
+          // opacity: 1,
           stagger: 0.05,
           duration: 1.5,
           ease: Power4.easeOut,
