@@ -7,6 +7,8 @@
   --highlight: #06a0f6;
   --active: #ff5908;
 
+  --p-size: 1.2rem;
+
   --mini-padding: 15px;
   --small-padding: 25px;
   --large-padding: 100px;
@@ -82,18 +84,68 @@ h1 span.highlight {
   color: var(--highlight);
 }
 
+h2 {
+  font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: var(--highlight);
+  display: flex;
+  align-items: center;
+  gap: var(--mini-padding);
+}
+
+h2 span {
+  width: 4rem;
+  height: 0.2rem;
+  background-color: var(--highlight);
+}
+
 p {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: var(--p-size);
 }
 
-b {
+p:first-child {
+  margin-top: 0;
+}
+
+p.highlight {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: var(--p-size);
+}
+
+a {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: var(--p-size);
+  color: var(--highlight);
+
+  position: relative;
+  text-decoration: none;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--active);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* UI elements */
@@ -101,7 +153,7 @@ button {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: var(--p-size);
   color: var(--text-white);
 
   padding: var(--mini-padding) var(--small-padding);

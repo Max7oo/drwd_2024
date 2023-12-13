@@ -23,10 +23,10 @@ function NavBar() {
       gsap.to("#fixedNav", {
         scrollTrigger: {
           trigger: "#fixedNav",
-          start: "500% top",
+          start: "700% top",
           //   end: "200% top",
           //   scrub: true,
-          markers: true,
+          // markers: true,
           toggleActions: "play none none reverse",
         },
         backgroundColor: "#fff",
@@ -37,6 +37,7 @@ function NavBar() {
 
     return () => ctx.revert();
   }, []);
+
   return (
     <div ref={context}>
       <nav id="nav" ref={nav}>

@@ -1,0 +1,9 @@
+#portfolio {
+  padding: var(--large-padding) var(--small-padding);
+}
+
+#portfolio__title {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+}

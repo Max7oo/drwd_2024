@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 import { gsap, Power1, Power4 } from "gsap";
@@ -65,6 +66,39 @@ function Hero() {
         },
         rotation: -4,
       });
+      gsap.to("#hero__description__p1", {
+        scrollTrigger: {
+          trigger: "#hero__description__p1",
+          start: "top bottom",
+          // scrub: true,
+          markers: true,
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#hero__description__p2", {
+        scrollTrigger: {
+          trigger: "#hero__description__p2",
+          start: "top bottom",
+          // scrub: true,
+          markers: true,
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#hero__description__p3", {
+        scrollTrigger: {
+          trigger: "#hero__description__p3",
+          start: "top bottom",
+          // scrub: true,
+          markers: true,
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
     }, context);
 
     return () => ctx.revert();
@@ -84,20 +118,19 @@ function Hero() {
       <div id="hero__image" ref={image} />
       <section id="hero__description__bg" ref={background} />
       <section id="hero__description">
-        <b>
+        <p className="highlight" id="hero__description__p1">
           Met een website van drwd legt u de essentie van uw bedrijf vast in een
           aantrekkelijk ontwerp dat doelgericht uw klanten bereikt.
-        </b>
-        <p>
+        </p>
+        <p id="hero__description__p2">
           Wij geloven dat alleen een maatwerk website dit aan u kan bieden, bij
           ons is geen enkele website hetzelfde.
         </p>
-        <p>
+        <p id="hero__description__p3">
           Om maatwerk te kunnen leveren is uw verhaal het aller belangrijkst.
-          Laten we daarom snel contact met elkaar opnemen.
+          Laten we daarom snel <Link>contact</Link> met elkaar opnemen.
         </p>
       </section>
-      <section id="test" />
     </div>
   );
 }

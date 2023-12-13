@@ -48,6 +48,10 @@
   color: var(--text-white);
 }
 
-#test {
-  height: 1000px;
+#hero__description__p1,
+#hero__description__p2,
+#hero__description__p3 {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
 }
