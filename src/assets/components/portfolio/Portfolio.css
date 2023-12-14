@@ -7,3 +7,49 @@
   opacity: 0;
   transform: translateY(100%);
 }
+
+.portfolio__item__img {
+  width: 100%;
+
+  border-radius: var(--radius);
+}
+
+.portfolio__item {
+  display: flex;
+  justify-content: space-between;
+
+  position: absolute;
+  /* width: calc(100% - 50px); */
+  transform: translateY(-100%);
+}
+
+.portfolio__item__title {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.portfolio__item__title__arrow {
+  z-index: 2;
+  position: relative;
+  bottom: 0;
+  right: 0;
+
+  width: 30px;
+  margin: var(--mini-padding);
+  padding: var(--mini-padding) calc(var(--mini-padding) / 3);
+
+  border: 3px solid var(--highlight);
+  border-radius: var(--small-padding);
+
+  transition: border 330ms ease-in-out;
+  transition: background-color 330ms ease-in-out;
+}
+
+.portfolio__item__title__arrow:hover {
+  cursor: pointer;
+  border: 3px solid var(--active);
+  background-color: var(--active);
+
+  transition: border 330ms ease-in-out;
+  transition: background-color 330ms ease-in-out;
+}

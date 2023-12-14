@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Bandencentrum Bloemsma",
+    "category": "WEBSITE + REBRANDING",
+    "text": "is een garage die zich specialiseert in al uw maatwerk voor banden. Dit houdt niet alleen in dat zij de perfecte set banden en velgen onder uw bolide zetten, maar deze ook uitlijnen en balanceren met geavanceerde technologie, uw velgen repareren en overige reparaties doen. De vakkundige werknemers doen dit allemaal terwijl u rustig verder kunt werken onder het genot van een bak koffie in de nieuwe kantine. Check de website op <a href=\"https://bandencentrumbloemsma.nl/\" target=\"_blank\" rel=\"noreferrer\">www.bandencentrumbloemsma.nl</a>.",
+    "img": "./src/assets/images/portfolio/bandencentrumbloemsma.jpg"
+  },
+  {
+    "title": "Eten&Co",
+    "category": "WEBSITE",
+    "text": "is een wereldrestaurant gevestigd in Groningen. Eten&Co laat zich inspireren door gerechten van over de hele wereld en bereidt deze met de grootst mogelijke zorg en aandacht voor de gasten. Deze gerechten worden aangeboden in buffetvorm. Benieuwd naar de website? Bezoek dan <a href=\"https://www.etenencogroningen.nl\" target=\"_blank\" rel=\"noreferrer\">www.etenencogroningen.nl</a>.",
+    "img": "./src/assets/images/portfolio/etenco.jpg"
+  }
+]
