@@ -1,0 +1,10 @@
+#services {
+  padding: var(--large-padding) var(--small-padding);
+}
+
+#services__line {
+  display: flex;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--highlight);
+}

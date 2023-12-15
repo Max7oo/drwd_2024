@@ -1,6 +1,7 @@
 import "./App.css";
 import Hero from "./assets/components/hero/Hero";
-import Portfolio from "./assets/components/portfolio/portfolio";
+import Portfolio from "./assets/components/portfolio/Portfolio";
+import Services from "./assets/components/services/Services";
 import MainLayOut from "./layout/MainLayOut";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <MainLayOut>
       <Hero />
       <Portfolio />
+      <Services />
     </MainLayOut>
   );
 }

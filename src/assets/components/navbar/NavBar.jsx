@@ -10,6 +10,8 @@ function NavBar() {
   const nav = useRef(null);
   const fixedNav = useRef(null);
 
+  // https://codepen.io/Mamboleoo/pen/poLEKob
+
   gsap.registerPlugin(ScrollTrigger);
 
   useLayoutEffect(() => {
