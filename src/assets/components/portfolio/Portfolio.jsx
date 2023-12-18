@@ -28,30 +28,30 @@ function Portfolio() {
         visibility: "visible",
         opacity: 1,
       });
-      portfolio.forEach(function callback(value, index) {
-        gsap.to(`#card${index} .portfolio__item__card`, {
-          scrollTrigger: {
-            trigger: `#card${index} .portfolio__item__card`,
-            start: "top center",
-            // scrub: true,
-            markers: true,
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          position: "relative",
-        });
-        gsap.to(`#card${index} .portfolio__item__card__title`, {
-          scrollTrigger: {
-            trigger: `#card${index} .portfolio__item__card`,
-            start: "top center",
-            // scrub: true,
-            // markers: true,
-            toggleActions: "play none none reverse",
-          },
-          visibility: "visible",
-          opacity: 1,
-        });
-      });
+      // portfolio.forEach(function callback(value, index) {
+      //   gsap.to(`#card${index} .portfolio__item__card`, {
+      //     scrollTrigger: {
+      //       trigger: `#card${index} .portfolio__item__card`,
+      //       start: "top center",
+      //       // scrub: true,
+      //       // markers: true,
+      //       toggleActions: "play none none reverse",
+      //     },
+      //     y: 0,
+      //     position: "relative",
+      //   });
+      //   gsap.to(`#card${index} .portfolio__item__card__title`, {
+      //     scrollTrigger: {
+      //       trigger: `#card${index} .portfolio__item__card`,
+      //       start: "top center",
+      //       // scrub: true,
+      //       // markers: true,
+      //       toggleActions: "play none none reverse",
+      //     },
+      //     visibility: "visible",
+      //     opacity: 1,
+      //   });
+      // });
     }, context);
 
     return () => ctx.revert();
@@ -116,35 +116,33 @@ function Portfolio() {
   };
 
   return (
-    <div ref={context}>
-      <section id="portfolio">
-        <h2 id="portfolio__title">
-          <span />
-          Portfolio
-        </h2>
-        {portfolio.map((item, index) => {
-          const { title, category, text, img } = item;
-          return (
-            <div id={`card${index}`} key={index} className="portfolio__item">
-              <img src={img} className="portfolio__item__img" alt={title} />
-              <div className="portfolio__item__card">
-                <div className="portfolio__item__card__title">
-                  <h3>{title}</h3>
-                  <h4>{category}</h4>
-                </div>
-                <img
-                  src={arrow}
-                  className="portfolio__item__card__arrow"
-                  alt="Expand"
-                  onClick={() => arrowHandler(index)}
-                />
+    <section id="portfolio" ref={context}>
+      <h2 id="portfolio__title">
+        <span />
+        Portfolio
+      </h2>
+      {portfolio.map((item, index) => {
+        const { title, category, text, img } = item;
+        return (
+          <div id={`card${index}`} key={index} className="portfolio__item">
+            <img src={img} className="portfolio__item__img" alt={title} />
+            <div className="portfolio__item__card">
+              <div className="portfolio__item__card__title">
+                <h3>{title}</h3>
+                <h4>{category}</h4>
               </div>
-              <p className="portfolio__item__card__text">{text}</p>
+              <img
+                src={arrow}
+                className="portfolio__item__card__arrow"
+                alt="Expand"
+                onClick={() => arrowHandler(index)}
+              />
             </div>
-          );
-        })}
-      </section>
-    </div>
+            <p className="portfolio__item__card__text">{text}</p>
+          </div>
+        );
+      })}
+    </section>
   );
 }
 

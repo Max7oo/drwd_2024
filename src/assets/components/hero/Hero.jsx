@@ -105,7 +105,7 @@ function Hero() {
   }, []);
 
   return (
-    <div ref={context}>
+    <header ref={context}>
       <section id="hero__title">
         <h1 id="title">
           <span>DRWD maakt&nbsp;</span>
@@ -131,7 +131,7 @@ function Hero() {
           Laten we daarom snel <Link>contact</Link> met elkaar opnemen.
         </p>
       </section>
-    </div>
+    </header>
   );
 }
 

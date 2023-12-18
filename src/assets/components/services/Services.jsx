@@ -1,14 +1,115 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import "./Services.css";
 
-// import { gsap, Power1, Power4 } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Services() {
   const context = useRef(null);
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to("#services__bg", {
+        scrollTrigger: {
+          trigger: "#services__bg",
+          start: "top center",
+          end: "bottom top",
+          scrub: true,
+          // markers: true,
+        },
+        rotation: -4,
+      });
+      gsap.to("#services__title", {
+        scrollTrigger: {
+          trigger: "#services__title",
+          start: "top bottom",
+          // scrub: true,
+          // markers: true,
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#services__description", {
+        scrollTrigger: {
+          trigger: "#services__description",
+          start: "top bottom",
+          // scrub: true,
+          // markers: true,
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#services__line", {
+        scrollTrigger: {
+          trigger: "#services__line",
+          start: "top bottom",
+          end: "bottom 25%",
+          scrub: true,
+          // markers: true,
+          // toggleActions: "play none none reverse",
+        },
+        width: "100%",
+      });
+      gsap.to("#services__items__1", {
+        scrollTrigger: {
+          trigger: "#services__items__1",
+          start: "center bottom",
+          // scrub: true,
+          markers: true,
+          // toggleActions: "play none none reverse",
+        },
+        x: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#services__items__2", {
+        scrollTrigger: {
+          trigger: "#services__items__2",
+          start: "center bottom",
+          // scrub: true,
+          markers: true,
+          // toggleActions: "play none none reverse",
+        },
+        x: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#services__items__3", {
+        scrollTrigger: {
+          trigger: "#services__items__3",
+          start: "center bottom",
+          // scrub: true,
+          markers: true,
+          // toggleActions: "play none none reverse",
+        },
+        x: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+      gsap.to("#services__items__4", {
+        scrollTrigger: {
+          trigger: "#services__items__4",
+          start: "center bottom",
+          // scrub: true,
+          markers: true,
+          // toggleActions: "play none none reverse",
+        },
+        x: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
+    }, context);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div ref={context}>
+      <section id="services__bg" />
       <section id="services">
         <h2 id="services__title">
           <span />
@@ -20,32 +121,34 @@ function Services() {
           ook voor u.
         </p>
         <span id="services__line" />
-        <table id="customers">
-          <tr>
-            <th>Websites</th>
-            <td>
-              Maken wij met behulp van WordPress maar kunnen ook compleet custom
-              gemaakt worden.
-            </td>
-          </tr>
-          <tr>
-            <th>Huisstijlen</th>
-            <td>
-              Creëren wij samen met u om uw merk zo goed mogelijk naar voren te
-              laten komen.
-            </td>
-          </tr>
-          <tr>
-            <th>Teksten</th>
-            <td>Kunnen wij samen met u of voor u schrijven.</td>
-          </tr>
-          <tr>
-            <th>Hosting</th>
-            <td>
-              Van uw websites bieden wij om ervoor te zorgen dat wij altijd de
-              beste kwaliteit kunnen bieden.
-            </td>
-          </tr>
+        <table id="services__items">
+          <tbody>
+            <tr id="services__items__1">
+              <th>Websites</th>
+              <td>
+                Maken wij met behulp van WordPress maar kunnen ook compleet
+                custom gemaakt worden.
+              </td>
+            </tr>
+            <tr id="services__items__2">
+              <th>Huisstijlen</th>
+              <td>
+                Creëren wij samen met u om uw merk zo goed mogelijk naar voren
+                te laten komen.
+              </td>
+            </tr>
+            <tr id="services__items__3">
+              <th>Teksten</th>
+              <td>Kunnen wij samen met u of voor u schrijven.</td>
+            </tr>
+            <tr id="services__items__4">
+              <th>Hosting</th>
+              <td>
+                Van uw websites bieden wij om ervoor te zorgen dat wij altijd de
+                beste kwaliteit kunnen bieden.
+              </td>
+            </tr>
+          </tbody>
         </table>
       </section>
     </div>

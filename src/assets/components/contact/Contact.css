@@ -1,0 +1,42 @@
+#contact {
+  padding: var(--large-padding) var(--small-padding);
+}
+
+#contact p span.highlight {
+  font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--highlight);
+}
+
+#contact__image {
+  z-index: 3;
+  position: relative;
+  display: flex;
+  margin: var(--small-padding) auto calc(-1 * var(--large-padding)) auto;
+  max-height: 30vh;
+  border-radius: var(--radius);
+  transform: rotate(4deg);
+}
+
+#contact__modal {
+  z-index: 1;
+  position: relative;
+
+  background-color: var(--highlight);
+  padding: var(--large-padding) var(--small-padding) var(--small-padding)
+    var(--small-padding);
+  border-radius: var(--radius);
+}
+
+#contact__modal__title {
+  color: var(--text-white);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+#contact__modal__title span {
+  background-color: var(--text-white);
+}

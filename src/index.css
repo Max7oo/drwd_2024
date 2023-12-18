@@ -97,7 +97,7 @@ h2 {
 
 h2 span {
   width: 4rem;
-  height: 0.2rem;
+  height: 3px;
   background-color: var(--highlight);
 }
 
@@ -119,7 +119,8 @@ h4 {
   margin: 0;
 }
 
-p {
+p,
+td {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -130,7 +131,8 @@ p:first-child {
   margin-top: 0;
 }
 
-p.highlight {
+p.highlight,
+th {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -229,6 +231,56 @@ button.secondary:hover p:after {
 }
 
 button.tertiary {
+  display: flex;
+  margin: var(--mini-padding) auto 0 auto;
   color: var(--text-black);
   background-color: var(--text-white);
+}
+button.tertiary:hover {
+  cursor: pointer;
+
+  color: var(--text-black);
+  background-color: var(--active);
+
+  transform: rotate(4deg);
+  transition: transform 330ms ease-in-out;
+}
+
+button.tertiary:last-child {
+  padding-right: var(--small-padding);
+}
+
+table {
+  margin-bottom: var(--small-padding);
+}
+
+table tr {
+  text-align: left;
+  vertical-align: text-top;
+}
+
+table tr th {
+  width: 50%;
+  padding-top: var(--small-padding);
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: var(--mini-padding);
+  padding: var(--mini-padding) var(--small-padding);
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: var(--p-size);
+}
+
+input:focus,
+textarea:focus {
+  border: 3px solid black;
 }
