@@ -16,7 +16,8 @@
   margin: var(--small-padding) 0;
 }
 
-#footer p {
+#footer p,
+#footer label {
   color: var(--text-white);
 }
 

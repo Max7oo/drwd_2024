@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,6 +8,8 @@ import arrow from "../../images/arrow_down.svg";
 
 function Portfolio() {
   const context = useRef(null);
+  const [load, setLoad] = useState(3);
+  const [loadButton, setLoadButton] = useState(true);
 
   const initialDirections = Array(portfolio.length).fill(true); // Initialize all directions to true
 
@@ -15,7 +17,7 @@ function Portfolio() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to("#portfolio__title", {
         scrollTrigger: {
@@ -82,6 +84,7 @@ function Portfolio() {
           borderColor: "var(--active)",
           rotate: "-180deg",
         });
+        ScrollTrigger.refresh(true);
       }, context);
 
       return () => ctx.revert();
@@ -109,6 +112,7 @@ function Portfolio() {
           visibility: "hidden",
           opacity: 0,
         });
+        ScrollTrigger.refresh(true);
       }, context);
 
       return () => ctx.revert();
@@ -122,26 +126,51 @@ function Portfolio() {
         Portfolio
       </h2>
       {portfolio.map((item, index) => {
-        const { title, category, text, img } = item;
-        return (
-          <div id={`card${index}`} key={index} className="portfolio__item">
-            <img src={img} className="portfolio__item__img" alt={title} />
-            <div className="portfolio__item__card">
-              <div className="portfolio__item__card__title">
-                <h3>{title}</h3>
-                <h4>{category}</h4>
+        if (index < load) {
+          const { title, category, text, img } = item;
+          return (
+            <div id={`card${index}`} key={index} className="portfolio__item">
+              <img src={img} className="portfolio__item__img" alt={title} />
+              <div className="portfolio__item__card">
+                <div className="portfolio__item__card__title">
+                  <h3>{title}</h3>
+                  <h4>{category}</h4>
+                </div>
+                <img
+                  src={arrow}
+                  className="portfolio__item__card__arrow"
+                  alt="Expand"
+                  onClick={() => arrowHandler(index)}
+                />
               </div>
-              <img
-                src={arrow}
-                className="portfolio__item__card__arrow"
-                alt="Expand"
-                onClick={() => arrowHandler(index)}
-              />
+              <p className="portfolio__item__card__text">{text}</p>
             </div>
-            <p className="portfolio__item__card__text">{text}</p>
-          </div>
-        );
+          );
+        }
       })}
+      <div id="portfolio__load">
+        {loadButton ? (
+          <button
+            className="primary"
+            onClick={() => {
+              setLoad(portfolio.length);
+              setLoadButton(false);
+            }}
+          >
+            Laad meer items
+          </button>
+        ) : (
+          <button
+            className="primary"
+            onClick={() => {
+              setLoad(3);
+              setLoadButton(true);
+            }}
+          >
+            Minder items
+          </button>
+        )}
+      </div>
     </section>
   );
 }

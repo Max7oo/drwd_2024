@@ -69,7 +69,7 @@ h1 {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 13vw;
   color: var(--text-black);
 }
 
@@ -80,7 +80,7 @@ h1 span.highlight {
   font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   font-weight: bold;
-  font-size: 3.5rem;
+  font-size: 15vw;
   color: var(--highlight);
 }
 
@@ -93,6 +93,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: var(--mini-padding);
+  margin-top: 0;
 }
 
 h2 span {
@@ -155,7 +156,7 @@ a:after {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 1px;
+  height: 2px;
   bottom: 0;
   left: 0;
   background-color: var(--active);
@@ -168,7 +169,36 @@ a:hover:after {
   transform-origin: bottom left;
 }
 
+label {
+  font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-block;
+}
+
 /* UI elements */
+.container {
+  position: relative;
+}
+
+.black-background {
+  position: absolute;
+  z-index: -1;
+
+  height: 100%;
+  width: calc(100vw + (2 * var(--small-padding)));
+  margin-left: calc(-1 * var(--small-padding));
+  margin-top: calc(-1 * var(--large-padding));
+  padding: var(--large-padding) 0;
+
+  background-color: var(--bg-black);
+
+  border-radius: var(--radius);
+
+  transform: rotate(4deg);
+}
+
 button {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
@@ -194,13 +224,12 @@ button.primary:hover {
   transition: transform 330ms ease-in-out;
 }
 
-button:last-child {
-  padding-right: 0px;
-}
-
 button.secondary {
   color: var(--text-black);
   background-color: transparent;
+}
+button.secondary:last-child {
+  padding-right: 0px;
 }
 
 button.secondary p {
@@ -244,10 +273,6 @@ button.tertiary:hover {
 
   transform: rotate(4deg);
   transition: transform 330ms ease-in-out;
-}
-
-button.tertiary:last-child {
-  padding-right: var(--small-padding);
 }
 
 table {

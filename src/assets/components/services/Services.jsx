@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./Services.css";
 
 import { gsap } from "gsap";
@@ -9,7 +9,7 @@ function Services() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to("#services__bg", {
         scrollTrigger: {
@@ -25,8 +25,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__title",
           start: "top bottom",
-          // scrub: true,
-          // markers: true,
         },
         y: 0,
         visibility: "visible",
@@ -36,8 +34,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__description",
           start: "top bottom",
-          // scrub: true,
-          // markers: true,
         },
         y: 0,
         visibility: "visible",
@@ -49,8 +45,6 @@ function Services() {
           start: "top bottom",
           end: "bottom 25%",
           scrub: true,
-          // markers: true,
-          // toggleActions: "play none none reverse",
         },
         width: "100%",
       });
@@ -58,9 +52,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__items__1",
           start: "center bottom",
-          // scrub: true,
-          markers: true,
-          // toggleActions: "play none none reverse",
         },
         x: 0,
         visibility: "visible",
@@ -70,9 +61,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__items__2",
           start: "center bottom",
-          // scrub: true,
-          markers: true,
-          // toggleActions: "play none none reverse",
         },
         x: 0,
         visibility: "visible",
@@ -82,9 +70,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__items__3",
           start: "center bottom",
-          // scrub: true,
-          markers: true,
-          // toggleActions: "play none none reverse",
         },
         x: 0,
         visibility: "visible",
@@ -94,9 +79,6 @@ function Services() {
         scrollTrigger: {
           trigger: "#services__items__4",
           start: "center bottom",
-          // scrub: true,
-          markers: true,
-          // toggleActions: "play none none reverse",
         },
         x: 0,
         visibility: "visible",
@@ -108,9 +90,9 @@ function Services() {
   }, []);
 
   return (
-    <div ref={context}>
-      <section id="services__bg" />
-      <section id="services">
+    <section className="container" ref={context}>
+      <div className="black-background" id="services__bg" />
+      <div id="services">
         <h2 id="services__title">
           <span />
           Services
@@ -150,8 +132,8 @@ function Services() {
             </tr>
           </tbody>
         </table>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

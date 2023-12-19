@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,7 +14,7 @@ function NavBar() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 1 } });
       tl.fromTo(
@@ -22,19 +22,19 @@ function NavBar() {
         { y: "-100%" },
         { y: "0%", ease: Power1.easeInOut }
       );
-      gsap.to("#fixedNav", {
-        scrollTrigger: {
-          trigger: "#fixedNav",
-          start: "700% top",
-          //   end: "200% top",
-          //   scrub: true,
-          // markers: true,
-          toggleActions: "play none none reverse",
-        },
-        backgroundColor: "#fff",
-        marginTop: 0,
-        position: "fixed",
-      });
+      // gsap.to("#fixedNav", {
+      //   scrollTrigger: {
+      //     trigger: "#fixedNav",
+      //     start: "700% top",
+      //     //   end: "200% top",
+      //     //   scrub: true,
+      //     // markers: true,
+      //     toggleActions: "play none none reverse",
+      //   },
+      //   backgroundColor: "#fff",
+      //   marginTop: 0,
+      //   position: "fixed",
+      // });
     }, context);
 
     return () => ctx.revert();
@@ -45,13 +45,13 @@ function NavBar() {
       <nav id="nav" ref={nav}>
         <img src={logo} alt="De Ruiter Webdevelopment Logo" />
         <div>
-          <button className="primary">Contact</button>
+          {/* <button className="primary">Contact</button> */}
           <button className="secondary">
             <p>Menu</p>
           </button>
         </div>
       </nav>
-      <nav id="fixedNav" ref={fixedNav}>
+      {/* <nav id="fixedNav" ref={fixedNav}>
         <img src={logo} alt="De Ruiter Webdevelopment Logo" />
         <div>
           <button className="primary">Contact</button>
@@ -59,7 +59,7 @@ function NavBar() {
             <p>Menu</p>
           </button>
         </div>
-      </nav>
+      </nav> */}
     </div>
   );
 }

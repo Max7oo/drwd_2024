@@ -1,22 +1,6 @@
-#services__bg {
-  position: absolute;
-  z-index: -1;
-
-  height: 950px;
-  width: calc(100vw + (2 * var(--small-padding)));
-  margin-left: calc(-1 * var(--small-padding));
-
-  background-color: var(--bg-black);
-
-  border-radius: var(--radius);
-
-  transform: rotate(4deg);
-}
-
 #services {
-  padding: var(--large-padding) var(--small-padding);
+  padding: 0 var(--small-padding);
 }
-
 #services p,
 th,
 td {

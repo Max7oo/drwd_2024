@@ -1,7 +1,7 @@
-import { useLayoutEffect, useRef } from "react";
 import "./Contact.css";
 import contact from "../../images/bas-en-max.jpg";
 
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +10,7 @@ function Contact() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to("#contact__image", {
         scrollTrigger: {
@@ -67,10 +67,10 @@ function Contact() {
           name="message"
           placeholder="Type hier uw bericht"
         />
-        <p>
+        <label>
           This site is protected by reCAPTCHA and the Google Privacy Policy and
           Terms of Service apply.
-        </p>
+        </label>
         <button className="tertiary">Inspireer ons</button>
       </div>
     </section>

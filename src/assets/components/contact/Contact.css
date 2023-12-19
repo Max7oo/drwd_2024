@@ -1,4 +1,5 @@
 #contact {
+  margin: var(--large-padding) 0 0 0;
   padding: var(--large-padding) var(--small-padding);
 }
 
@@ -32,6 +33,7 @@
 
 #contact__modal__title {
   color: var(--text-white);
+  margin-top: 0.83em;
   visibility: hidden;
   opacity: 0;
   transform: translateY(100%);

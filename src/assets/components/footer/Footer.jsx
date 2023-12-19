@@ -1,4 +1,3 @@
-import { useLayoutEffect, useRef } from "react";
 import "./Footer.css";
 import logo from "../../images/logo.svg";
 import instagram from "../../images/footer/instagram.svg";
@@ -8,52 +7,28 @@ import call from "../../images/footer/call.svg";
 import email from "../../images/footer/send.svg";
 import icon from "../../images/icon.svg";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 function Footer() {
-  const context = useRef(null);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to("#contact__image", {
-        scrollTrigger: {
-          trigger: "#contact__image",
-          start: "top center",
-          end: "bottom top",
-          scrub: true,
-          // markers: true,
-        },
-        rotation: -4,
-      });
-    }, context);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <footer id="footer" ref={context}>
+    <footer id="footer">
       <img src={logo} alt="De Ruiter Webdevelopment" id="footer__logo" />
       <span className="footer__line" />
       <p>Sociale media</p>
       <div id="footer__sm">
         <span>
           <img src={instagram} alt="Instagram De Ruiter Webdevelopment" />
-          <p>Volg ons</p>
+          <label>Volg ons</label>
         </span>
         <span>
           <img src={linkedin} alt="LinkedIn Bas de Ruiter" />
-          <p>Bas de Ruiter</p>
+          <label>Bas de Ruiter</label>
         </span>
         <span>
           <img src={linkedin} alt="LinkedIn Max de Ruiter" />
-          <p>Max de Ruiter</p>
+          <label>Max de Ruiter</label>
         </span>
         <span>
           <img src={web} alt="Portfolio website Max de Ruiter" />
-          <p>Max de Ruiter</p>
+          <label>Max de Ruiter</label>
         </span>
       </div>
       <p>Contact ons</p>

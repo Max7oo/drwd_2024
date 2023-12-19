@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
@@ -13,7 +13,7 @@ function Hero() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ourText = new SplitType("h1", { types: "chars" });
     const chars = ourText.chars;
 
@@ -32,6 +32,7 @@ function Hero() {
         { y: "0%", ease: Power1.easeInOut },
         "image"
       );
+      ScrollTrigger.refresh(true);
       tl.fromTo(
         chars,
         {
@@ -56,9 +57,9 @@ function Hero() {
         },
         rotation: 4,
       });
-      gsap.to("#hero__description__bg", {
+      gsap.to("#hero__bg", {
         scrollTrigger: {
-          trigger: "#hero__description__bg",
+          trigger: "#hero__bg",
           start: "-100% center",
           end: "-50% top",
           scrub: true,
@@ -116,21 +117,23 @@ function Hero() {
         </h1>
       </section>
       <div id="hero__image" ref={image} />
-      <section id="hero__description__bg" ref={background} />
-      <section id="hero__description">
-        <p className="highlight" id="hero__description__p1">
-          Met een website van drwd legt u de essentie van uw bedrijf vast in een
-          aantrekkelijk ontwerp dat doelgericht uw klanten bereikt.
-        </p>
-        <p id="hero__description__p2">
-          Wij geloven dat alleen een maatwerk website dit aan u kan bieden, bij
-          ons is geen enkele website hetzelfde.
-        </p>
-        <p id="hero__description__p3">
-          Om maatwerk te kunnen leveren is uw verhaal het aller belangrijkst.
-          Laten we daarom snel <Link>contact</Link> met elkaar opnemen.
-        </p>
-      </section>
+      <div className="container">
+        <div className="black-background" id="hero__bg" ref={background} />
+        <section id="hero__description">
+          <p className="highlight" id="hero__description__p1">
+            Met een website van drwd legt u de essentie van uw bedrijf vast in
+            een aantrekkelijk ontwerp dat doelgericht uw klanten bereikt.
+          </p>
+          <p id="hero__description__p2">
+            Wij geloven dat alleen een maatwerk website dit aan u kan bieden,
+            bij ons is geen enkele website hetzelfde.
+          </p>
+          <p id="hero__description__p3">
+            Om maatwerk te kunnen leveren is uw verhaal het aller belangrijkst.
+            Laten we daarom snel <Link>contact</Link> met elkaar opnemen.
+          </p>
+        </section>
+      </div>
     </header>
   );
 }
