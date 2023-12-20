@@ -1,12 +1,19 @@
 nav {
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 50px);
 
+  background-color: var(--bg-grey);
+
   padding: var(--mini-padding) var(--small-padding);
+  transition: 0.3s ease-out;
+}
+
+nav.is-hidden {
+  transform: translateY(-100%);
 }
 
 nav img {
@@ -18,7 +25,22 @@ nav div {
   gap: var(--mini-padding);
 }
 
-#fixedNav {
-  position: absolute;
-  margin-top: -90px;
+#menu {
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  right: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  gap: var(--small-padding);
+  height: 100vh;
+  width: 100vw;
+
+  background-color: var(--bg-grey);
+  /* box-shadow: -10px 0px 15px var(--text-black); */
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
 }
