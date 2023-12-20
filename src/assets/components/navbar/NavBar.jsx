@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { gsap, Power1 } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import "./NavBar.css";
 import logo from "../../images/icon.svg";
+import close from "../../images/close.svg";
 
 function NavBar() {
   const context = useRef(null);
@@ -21,12 +22,11 @@ function NavBar() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { duration: 1 } });
-      tl.fromTo(
-        nav.current,
-        { marginTop: "-100%" },
-        { marginTop: "0%", ease: Power1.easeInOut }
-      );
+      gsap.to(nav.current, {
+        marginTop: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
       Observer.create({
         target: window,
         type: "scroll",
@@ -43,15 +43,13 @@ function NavBar() {
     let ctx = gsap.context(() => {
       if (openMenu) {
         gsap.to("#menu", {
-          x: 0,
-          visibility: "visible",
+          x: "0%",
           opacity: 1,
         });
         setOpenMenu(!openMenu);
       } else {
         gsap.to("#menu", {
-          x: 100,
-          visibility: "hidden",
+          x: "100%",
           opacity: 0,
         });
         setOpenMenu(!openMenu);
@@ -62,13 +60,21 @@ function NavBar() {
   };
 
   const scrollToItem = (item) => {
-    console.log(item);
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: `#${item}`, offsetY: 50 },
-      ease: "Power1.easeInOut",
-    });
-    menu();
+    if (item === "services") {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: `#${item}`, offsetY: 100 },
+        ease: "Power1.easeInOut",
+      });
+      menu();
+    } else {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: `#${item}`, offsetY: 0 },
+        ease: "Power1.easeInOut",
+      });
+      menu();
+    }
   };
 
   return (
@@ -83,9 +89,30 @@ function NavBar() {
         </div>
       </nav>
       <div id="menu">
-        <button onClick={() => scrollToItem("portfolio")}>Portfolio</button>
-        <button onClick={() => scrollToItem("services")}>Services</button>
-        <button onClick={() => scrollToItem("contact")}>Contact</button>
+        <div id="menu__bar">
+          <img src={logo} alt="De Ruiter Webdevelopment Logo" />
+          <div>
+            {/* <button className="primary">Contact</button> */}
+            <button className="secondary" onClick={() => menu()}>
+              <img src={close} alt="Close menu" />
+            </button>
+          </div>
+        </div>
+        <div id="menu__items">
+          <button onClick={() => scrollToItem("portfolio")}>
+            <span />
+            <h2>Portfolio</h2>
+          </button>
+          <button onClick={() => scrollToItem("services")}>
+            <span />
+            <h2>Services</h2>
+          </button>
+          <button onClick={() => scrollToItem("contact")}>
+            <span />
+            <h2>Contact</h2>
+          </button>
+        </div>
+        <div></div>
       </div>
     </div>
   );
