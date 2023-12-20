@@ -97,7 +97,7 @@ function Services() {
           <span />
           Services
         </h2>
-        <p id="services__description">
+        <p id="services__description" className="highlight">
           Onze services zijn gericht op het verbeteren van uw online
           aanwezigheid. In de hedendaagse maatschappij is dit essentieël, dus
           ook voor u.

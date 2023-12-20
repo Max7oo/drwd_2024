@@ -40,12 +40,10 @@ function Contact() {
 
   return (
     <section id="contact" ref={context}>
-      <p id="contact__description">
+      <p id="contact__description" className="highlight">
         Wij zijn 2 broers met een passie voor het maken van{" "}
-        <span className="highlight">
-          doeltreffende en aantrekkelijke websites
-        </span>{" "}
-        voor bedrijven met een interessant verhaal.
+        <span>doeltreffende en aantrekkelijke websites</span> voor bedrijven met
+        een interessant verhaal.
       </p>
       <img src={contact} alt="Bas & Max" id="contact__image" />
       <div id="contact__modal">

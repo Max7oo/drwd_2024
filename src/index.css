@@ -7,7 +7,9 @@
   --highlight: #06a0f6;
   --active: #ff5908;
 
-  --p-size: 1.2rem;
+  --p-small: 4vw;
+  --p-size: 5vw;
+  --p-highlight: 6vw;
 
   --mini-padding: 15px;
   --small-padding: 25px;
@@ -132,7 +134,14 @@ p:first-child {
   margin-top: 0;
 }
 
-p.highlight,
+p.highlight {
+  font-size: var(--p-highlight);
+}
+
+p.bold {
+  font-weight: normal;
+}
+
 th {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
@@ -173,7 +182,7 @@ label {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--p-small);
   display: inline-block;
 }
 
