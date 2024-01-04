@@ -120,7 +120,7 @@ function Hero() {
       <div className="container">
         <div className="black-background" id="hero__bg" ref={background} />
         <section id="hero__description">
-          <p className="highlight" id="hero__description__p1">
+          <p className="highlight bold" id="hero__description__p1">
             Met een website van drwd legt u de essentie van uw bedrijf vast in
             een aantrekkelijk ontwerp dat doelgericht uw klanten bereikt.
           </p>

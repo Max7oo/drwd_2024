@@ -16,9 +16,12 @@
   margin: var(--small-padding) 0;
 }
 
-#footer p,
-#footer label {
+#footer p {
   color: var(--text-white);
+}
+
+#footer__info p {
+  font-size: var(--p-small);
 }
 
 #footer__sm {

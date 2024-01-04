@@ -16,37 +16,39 @@ function Footer() {
       <div id="footer__sm">
         <span>
           <img src={instagram} alt="Instagram De Ruiter Webdevelopment" />
-          <label>Volg ons</label>
+          <p>Volg ons</p>
         </span>
         <span>
           <img src={linkedin} alt="LinkedIn Bas de Ruiter" />
-          <label>Bas de Ruiter</label>
+          <p>Bas de Ruiter</p>
         </span>
         <span>
           <img src={linkedin} alt="LinkedIn Max de Ruiter" />
-          <label>Max de Ruiter</label>
+          <p>Max de Ruiter</p>
         </span>
         <span>
           <img src={web} alt="Portfolio website Max de Ruiter" />
-          <label>Max de Ruiter</label>
+          <p>Max de Ruiter</p>
         </span>
       </div>
       <p className="highlight">Contact ons</p>
       <div id="footer__contact">
         <span>
           <img src={call} alt="Bel ons" />
-          <label>Bel ons op mobiel</label>
+          <p>Bel ons op mobiel</p>
         </span>
         <span>
           <img src={email} alt="Mail ons" />
-          <label>Stuur ons een email</label>
+          <p>Stuur ons een email</p>
         </span>
       </div>
       <span className="footer__line" />
-      <a>
-        <label>Privacy statement</label>
-      </a>
-      <label>KvK: 76769852</label>
+      <div id="footer__info">
+        <a>
+          <p>Privacy statement</p>
+        </a>
+        <p>KvK: 76769852</p>
+      </div>
       <div id="footer__credits">
         <p>© De Ruiter Webdevelopment</p>
         <img src={icon} alt="De Ruiter Webdevelopment" />
