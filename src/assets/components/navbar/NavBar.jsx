@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import { gsap, Power1 } from "gsap";
+import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -26,6 +27,8 @@ function NavBar() {
         marginTop: 0,
         visibility: "visible",
         opacity: 1,
+        duration: 1,
+        ease: Power1.easeInOut,
       });
       Observer.create({
         target: window,
@@ -41,10 +44,24 @@ function NavBar() {
 
   const menu = () => {
     let ctx = gsap.context(() => {
+      // const tl = gsap.timeline({ defaults: { duration: 1 } });
+      const menuItems = document.querySelectorAll(".menu__item");
       if (openMenu) {
         gsap.to("#menu", {
           x: "0%",
           opacity: 1,
+        });
+        gsap.to(menuItems, {
+          y: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.2, // Adjust the stagger value to control the delay between items
+            each: 0.2, // Delay between opacity and position changes for each item
+          },
+          onStart: () => {
+            // Set visibility to 'visible' when the animation starts
+            menuItems.forEach((item) => (item.style.visibility = "visible"));
+          },
         });
         setOpenMenu(!openMenu);
       } else {
@@ -99,15 +116,24 @@ function NavBar() {
           </div>
         </div>
         <div id="menu__items">
-          <button onClick={() => scrollToItem("portfolio")}>
+          <button
+            className="menu__item"
+            onClick={() => scrollToItem("portfolio")}
+          >
             <span />
             <h2>Portfolio</h2>
           </button>
-          <button onClick={() => scrollToItem("services")}>
+          <button
+            className="menu__item"
+            onClick={() => scrollToItem("services")}
+          >
             <span />
             <h2>Services</h2>
           </button>
-          <button onClick={() => scrollToItem("contact")}>
+          <button
+            className="menu__item"
+            onClick={() => scrollToItem("contact")}
+          >
             <span />
             <h2>Contact</h2>
           </button>

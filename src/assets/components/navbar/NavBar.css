@@ -84,6 +84,9 @@ nav div {
   border-radius: 0;
 
   transition: transform 330ms ease-in-out;
+
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 #menu__items button:hover {

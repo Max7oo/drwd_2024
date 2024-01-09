@@ -5,6 +5,9 @@
 
 #contact__description {
   padding-bottom: var(--small-padding);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 #contact__description span {

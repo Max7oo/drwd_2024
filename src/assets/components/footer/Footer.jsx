@@ -44,9 +44,7 @@ function Footer() {
       </div>
       <span className="footer__line" />
       <div id="footer__info">
-        <a>
-          <p>Privacy statement</p>
-        </a>
+        <a>Privacy statement</a>
         <p>KvK: 76769852</p>
       </div>
       <div id="footer__credits">

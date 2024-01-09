@@ -12,6 +12,15 @@ function Contact() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
+      gsap.to("#contact__description", {
+        scrollTrigger: {
+          trigger: "#contact__description",
+          start: "top bottom",
+        },
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      });
       gsap.to("#contact__image", {
         scrollTrigger: {
           trigger: "#contact__image",

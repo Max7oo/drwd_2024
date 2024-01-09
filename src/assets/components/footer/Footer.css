@@ -20,10 +20,6 @@
   color: var(--text-white);
 }
 
-#footer__info p {
-  font-size: var(--p-small);
-}
-
 #footer__sm {
   display: grid;
   grid-template-columns: auto auto;
@@ -39,6 +35,11 @@
   padding: var(--mini-padding);
   border-radius: var(--radius);
   border: 3px solid var(--highlight);
+}
+
+#footer span:hover {
+  background-color: var(--highlight);
+  cursor: pointer;
 }
 
 #footer__sm span img {
@@ -71,6 +72,15 @@
 
 #footer__contact span p {
   margin: 0;
+}
+
+#footer__info a {
+  font-size: var(--p-small);
+  color: var(--text-white);
+}
+
+#footer__info p {
+  font-size: var(--p-small);
 }
 
 #footer__credits {

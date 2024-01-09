@@ -43,7 +43,7 @@ function Hero() {
           y: 0,
           // opacity: 1,
           stagger: 0.05,
-          duration: 1.5,
+          duration: 0.75,
           ease: Power4.easeOut,
         }
       );
