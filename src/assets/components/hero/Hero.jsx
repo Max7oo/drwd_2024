@@ -47,70 +47,134 @@ function Hero() {
           ease: Power4.easeOut,
         }
       );
-      gsap.to("#hero__image", {
-        scrollTrigger: {
-          trigger: "#hero__image",
-          start: "-100% center",
-          end: "-50% top",
-          scrub: true,
-          // markers: true,
-        },
-        rotation: 4,
-      });
-      gsap.to("#hero__bg", {
-        scrollTrigger: {
-          trigger: "#hero__bg",
-          start: "-100% center",
-          end: "-50% top",
-          scrub: true,
-          // markers: true,
-        },
-        rotation: -4,
-      });
-      gsap.to("#hero__description__p1", {
-        scrollTrigger: {
-          trigger: "#hero__description__p1",
-          start: "top bottom",
-          // scrub: true,
-          // markers: true,
-        },
-        y: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
-      gsap.to("#hero__description__p2", {
-        scrollTrigger: {
-          trigger: "#hero__description__p2",
-          start: "top bottom",
-          // scrub: true,
-          // markers: true,
-        },
-        y: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
-      gsap.to("#hero__description__p3", {
-        scrollTrigger: {
-          trigger: "#hero__description__p3",
-          start: "top bottom",
-          // scrub: true,
-          // markers: true,
-        },
-        y: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
+      if (window.innerWidth <= 600) {
+        gsap.to("#hero__image", {
+          scrollTrigger: {
+            trigger: "#hero__image",
+            start: "-100% center",
+            end: "-50% top",
+            scrub: true,
+            // markers: true,
+          },
+          rotation: 4,
+        });
+        gsap.to("#hero__bg", {
+          scrollTrigger: {
+            trigger: "#hero__bg",
+            start: "-100% center",
+            end: "-50% top",
+            scrub: true,
+            // markers: true,
+          },
+          rotation: -4,
+        });
+        gsap.to("#hero__description__p1", {
+          scrollTrigger: {
+            trigger: "#hero__description__p1",
+            start: "top bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#hero__description__p2", {
+          scrollTrigger: {
+            trigger: "#hero__description__p2",
+            start: "top bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#hero__description__p3", {
+          scrollTrigger: {
+            trigger: "#hero__description__p3",
+            start: "top bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      } else if (window.innerWidth >= 600) {
+        gsap.to("#hero__image", {
+          scrollTrigger: {
+            trigger: "#hero__image",
+            start: "-100% 25%",
+            end: "-50% top",
+            scrub: true,
+            // markers: true,
+          },
+          rotation: 4,
+        });
+        gsap.to("#hero__bg", {
+          scrollTrigger: {
+            trigger: "#hero__bg",
+            start: "-100% 25%",
+            end: "-50% top",
+            scrub: true,
+            // markers: true,
+          },
+          rotation: -4,
+        });
+        gsap.to("#hero__description__p1", {
+          scrollTrigger: {
+            trigger: "#hero__description",
+            start: "center bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#hero__description__p2", {
+          scrollTrigger: {
+            trigger: "#hero__description",
+            start: "center bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#hero__description__p3", {
+          scrollTrigger: {
+            trigger: "#hero__description",
+            start: "center bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      }
     }, context);
 
     return () => ctx.revert();
   }, []);
+
+  const scrollToItem = (item) => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: `#${item}`, offsetY: 0 },
+      ease: "Power1.easeInOut",
+    });
+  };
 
   return (
     <header ref={context}>
       <section id="hero__title">
         <h1 id="title">
           <span>DRWD maakt&nbsp;</span>
-          <span>
+          <span className="second-span">
             <span className="highlight">websites</span>&nbsp;voor&nbsp;
           </span>
           <span>de MKB-sector</span>
@@ -124,14 +188,18 @@ function Hero() {
             Met een website van drwd legt u de essentie van uw bedrijf vast in
             een aantrekkelijk ontwerp dat doelgericht uw klanten bereikt.
           </p>
-          <p id="hero__description__p2">
-            Wij geloven dat alleen een maatwerk website dit aan u kan bieden,
-            bij ons is geen enkele website hetzelfde.
-          </p>
-          <p id="hero__description__p3">
-            Om maatwerk te kunnen leveren is uw verhaal het aller belangrijkst.
-            Laten we daarom snel <Link>contact</Link> met elkaar opnemen.
-          </p>
+          <div>
+            <p id="hero__description__p2">
+              Wij geloven dat alleen een maatwerk website dit aan u kan bieden,
+              bij ons is geen enkele website hetzelfde.
+            </p>
+            <p id="hero__description__p3">
+              Om maatwerk te kunnen leveren is uw verhaal het aller
+              belangrijkst. Laten we daarom snel{" "}
+              <Link onClick={() => scrollToItem("contact")}>contact</Link> met
+              elkaar opnemen.
+            </p>
+          </div>
         </section>
       </div>
     </header>

@@ -14,33 +14,49 @@ function Footer() {
       <span className="footer__line" />
       <p className="highlight">Sociale media</p>
       <div id="footer__sm">
-        <span>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/drwd.nl/"
+        >
           <img src={instagram} alt="Instagram De Ruiter Webdevelopment" />
           <p>Volg ons</p>
-        </span>
-        <span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/bas-de-ruiter-5ab109b1/"
+        >
           <img src={linkedin} alt="LinkedIn Bas de Ruiter" />
           <p>Bas de Ruiter</p>
-        </span>
-        <span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/max-de-ruiter-2a8871181/"
+        >
           <img src={linkedin} alt="LinkedIn Max de Ruiter" />
           <p>Max de Ruiter</p>
-        </span>
-        <span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://maxderuiter.com/"
+        >
           <img src={web} alt="Portfolio website Max de Ruiter" />
           <p>Max de Ruiter</p>
-        </span>
+        </a>
       </div>
       <p className="highlight">Contact ons</p>
       <div id="footer__contact">
-        <span>
+        <a rel="noopener noreferrer" href="tel:31621324900">
           <img src={call} alt="Bel ons" />
           <p>Bel ons op mobiel</p>
-        </span>
-        <span>
+        </a>
+        <a rel="noopener noreferrer" href="mailto:info@drwd.nl">
           <img src={email} alt="Mail ons" />
           <p>Stuur ons een email</p>
-        </span>
+        </a>
       </div>
       <span className="footer__line" />
       <div id="footer__info">

@@ -7,13 +7,15 @@
   --highlight: #06a0f6;
   --active: #ff5908;
 
-  --p-small: 4vw;
-  --p-size: 5vw;
-  --p-highlight: 6vw;
+  --p-small: 1rem;
+  --p-size: 1.125rem;
+  --p-highlight: 1.5rem;
 
   --mini-padding: 15px;
   --small-padding: 25px;
   --large-padding: 100px;
+
+  --side-margin: 25px;
 
   --radius: 10px;
 }
@@ -71,7 +73,7 @@ h1 {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 13vw;
+  font-size: 3rem;
   color: var(--text-black);
 }
 
@@ -82,8 +84,17 @@ h1 span.highlight {
   font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   font-weight: bold;
-  font-size: 15vw;
+  font-size: 3.5rem;
   color: var(--highlight);
+}
+
+@media (min-width: 0px) and (max-width: 370px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h1 span.highlight {
+    font-size: 2.4rem;
+  }
 }
 
 h2 {
@@ -139,7 +150,7 @@ p.highlight {
 }
 
 p.bold {
-  font-weight: normal;
+  font-weight: 500;
 }
 
 th {
@@ -317,4 +328,16 @@ textarea {
 input:focus,
 textarea:focus {
   border: 3px solid black;
+}
+
+@media only screen and (min-width: 600px) {
+  p.bold {
+    font-weight: normal;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --side-margin: 10%;
+  }
 }

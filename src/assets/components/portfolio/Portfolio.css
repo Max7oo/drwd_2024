@@ -1,6 +1,6 @@
 #portfolio {
   margin: var(--large-padding) 0;
-  padding: var(--large-padding) var(--small-padding);
+  padding: var(--large-padding) var(--side-margin);
 }
 
 #portfolio__title {

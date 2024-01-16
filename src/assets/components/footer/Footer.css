@@ -1,7 +1,7 @@
 #footer {
   background-color: var(--bg-black);
-  padding: var(--large-padding) var(--small-padding) var(--small-padding)
-    var(--small-padding);
+  padding: var(--large-padding) var(--side-margin) var(--small-padding)
+    var(--side-margin);
 }
 
 #footer__logo {
@@ -28,7 +28,7 @@
   row-gap: var(--mini-padding);
 }
 
-#footer__sm span {
+#footer__sm a {
   display: flex;
   align-items: center;
   gap: var(--mini-padding);
@@ -37,16 +37,21 @@
   border: 3px solid var(--highlight);
 }
 
-#footer span:hover {
+#footer__sm a:after {
+  width: 0;
+  height: 0;
+}
+
+#footer a:hover {
   background-color: var(--highlight);
   cursor: pointer;
 }
 
-#footer__sm span img {
+#footer__sm a img {
   height: 24px;
 }
 
-#footer__sm span p {
+#footer__sm a p {
   margin: 0;
 }
 
@@ -58,20 +63,25 @@
   row-gap: var(--mini-padding);
 }
 
-#footer__contact span {
+#footer__contact a {
   display: inline-block;
   padding: var(--mini-padding);
   border-radius: var(--radius);
   border: 3px solid var(--highlight);
 }
 
-#footer__contact span img {
+#footer__contact a img {
   height: 24px;
   margin-bottom: calc(var(--large-padding) / 2);
 }
 
-#footer__contact span p {
+#footer__contact a p {
   margin: 0;
+}
+
+#footer__contact a:after {
+  width: 0;
+  height: 0;
 }
 
 #footer__info a {

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, Power1 } from "gsap";
-import SplitType from "split-type";
+// import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import "./NavBar.css";
 import logo from "../../images/icon.svg";
-import close from "../../images/close.svg";
+// import close from "../../images/close.svg";
 
 function NavBar() {
   const context = useRef(null);
@@ -56,19 +56,20 @@ function NavBar() {
           opacity: 1,
           stagger: {
             amount: 0.2, // Adjust the stagger value to control the delay between items
-            each: 0.2, // Delay between opacity and position changes for each item
           },
           onStart: () => {
             // Set visibility to 'visible' when the animation starts
             menuItems.forEach((item) => (item.style.visibility = "visible"));
           },
         });
+        nav.current.classList.add("is-active");
         setOpenMenu(!openMenu);
       } else {
         gsap.to("#menu", {
           x: "100%",
           opacity: 0,
         });
+        nav.current.classList.remove("is-active");
         setOpenMenu(!openMenu);
       }
     }, context);
@@ -83,38 +84,48 @@ function NavBar() {
         scrollTo: { y: `#${item}`, offsetY: 100 },
         ease: "Power1.easeInOut",
       });
-      menu();
+      if (!openMenu) {
+        menu();
+      }
     } else {
       gsap.to(window, {
         duration: 1,
         scrollTo: { y: `#${item}`, offsetY: 0 },
         ease: "Power1.easeInOut",
       });
-      menu();
+      if (!openMenu) {
+        menu();
+      }
     }
   };
 
   return (
-    <div ref={context}>
-      <nav id="nav" ref={nav}>
+    <nav ref={context}>
+      <div id="nav" ref={nav}>
         <img src={logo} alt="De Ruiter Webdevelopment Logo" />
-        <div>
-          {/* <button className="primary">Contact</button> */}
-          <button className="secondary" onClick={() => menu()}>
-            <p>Menu</p>
+        {/* <button className="primary">Contact</button> */}
+        <button id="nav__button" className="secondary" onClick={() => menu()}>
+          {openMenu ? <p>Menu</p> : <p>Close</p>}
+        </button>
+        <div id="nav__buttons">
+          <button
+            className="secondary"
+            onClick={() => scrollToItem("portfolio")}
+          >
+            <p>Portfolio</p>
+          </button>
+          <button
+            className="secondary"
+            onClick={() => scrollToItem("services")}
+          >
+            <p>Services</p>
+          </button>
+          <button className="primary" onClick={() => scrollToItem("contact")}>
+            Contact
           </button>
         </div>
-      </nav>
+      </div>
       <div id="menu">
-        <div id="menu__bar">
-          <img src={logo} alt="De Ruiter Webdevelopment Logo" />
-          <div>
-            {/* <button className="primary">Contact</button> */}
-            <button className="secondary" onClick={() => menu()}>
-              <img src={close} alt="Close menu" />
-            </button>
-          </div>
-        </div>
         <div id="menu__items">
           <button
             className="menu__item"
@@ -138,9 +149,8 @@ function NavBar() {
             <h2>Contact</h2>
           </button>
         </div>
-        <div></div>
       </div>
-    </div>
+    </nav>
   );
 }
 

@@ -1,6 +1,6 @@
 #contact {
   margin: var(--large-padding) 0 0 0;
-  padding: var(--large-padding) var(--small-padding);
+  padding: var(--large-padding) var(--side-margin);
 }
 
 #contact__description {
@@ -14,7 +14,7 @@
   font-family: "PP Cirka", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   font-weight: bold;
-  font-size: 7vw;
+  font-size: 1.7rem;
   color: var(--highlight);
 }
 
@@ -48,4 +48,10 @@
 
 #contact__modal__title span {
   background-color: var(--text-white);
+}
+
+@media only screen and (min-width: 600px) {
+  #contact__description span {
+    font-size: 1.75rem;
+  }
 }
