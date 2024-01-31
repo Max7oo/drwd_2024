@@ -17,6 +17,7 @@
 
   --side-margin: 25px;
 
+  --gap: 25px;
   --radius: 10px;
 }
 
@@ -53,6 +54,14 @@ body {
 
 @font-face {
   font-family: "Neue Haas Grotesk Display Pro";
+  src: url(./assets/fonts/NeueHaasDisplay-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
   src: url(./assets/fonts/NeueHaasDisplay-Roman.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -72,7 +81,7 @@ body {
 h1 {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 3rem;
   color: var(--text-black);
 }
@@ -150,7 +159,7 @@ p.highlight {
 }
 
 p.bold {
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 th {
@@ -192,7 +201,7 @@ a:hover:after {
 label {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-size: var(--p-small);
   display: inline-block;
 }
@@ -331,13 +340,37 @@ textarea:focus {
 }
 
 @media only screen and (min-width: 600px) {
-  p.bold {
-    font-weight: normal;
+  :root {
+    --side-margin: 10%;
   }
 }
 
 @media only screen and (min-width: 800px) {
   :root {
     --side-margin: 10%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  :root {
+    --gap: 50px;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  h1 span.highlight {
+    font-size: 5.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --large-padding: 200px;
+  }
+
+  table tr th.no-padding-top {
+    padding-top: 0;
   }
 }

@@ -106,3 +106,43 @@
 #footer__credits img {
   height: 3rem;
 }
+
+#footer__desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  #footer {
+    padding: var(--large-padding) calc(2 * var(--side-margin))
+      var(--small-padding) calc(2 * var(--side-margin));
+  }
+
+  #footer__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--gap);
+  }
+
+  #footer__line {
+    display: none;
+  }
+
+  #footer__mobile {
+    display: none;
+  }
+
+  #footer__desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #footer__desktop p {
+    margin: 0;
+  }
+
+  #footer__desktop img {
+    height: 3rem;
+  }
+}

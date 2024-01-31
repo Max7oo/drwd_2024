@@ -116,7 +116,7 @@ function Hero() {
           scrollTrigger: {
             trigger: "#hero__bg",
             start: "-100% 25%",
-            end: "-50% top",
+            end: "0% top",
             scrub: true,
             // markers: true,
           },

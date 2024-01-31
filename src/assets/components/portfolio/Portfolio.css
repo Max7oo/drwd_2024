@@ -75,3 +75,9 @@
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (min-width: 1200px) {
+  #portfolio {
+    padding: var(--large-padding) calc(2 * var(--side-margin));
+  }
+}

@@ -55,3 +55,32 @@
     font-size: 1.75rem;
   }
 }
+
+@media only screen and (min-width: 800px) {
+  #contact {
+    padding: var(--large-padding) calc(2 * var(--side-margin));
+  }
+
+  #contact__description {
+    padding: 0 var(--side-margin) var(--small-padding) var(--side-margin);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+
+    margin: var(--large-padding) 0 0 0;
+    padding: var(--large-padding) calc(2 * var(--side-margin));
+  }
+
+  #contact__description {
+    padding: 0 0 var(--small-padding) 0;
+  }
+
+  #contact__modal {
+    padding: var(--small-padding) var(--small-padding);
+  }
+}

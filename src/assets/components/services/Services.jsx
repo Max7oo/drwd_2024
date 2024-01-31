@@ -97,41 +97,43 @@ function Services() {
           <span />
           Services
         </h2>
-        <p id="services__description" className="highlight bold">
-          Onze services zijn gericht op het verbeteren van uw online
-          aanwezigheid. In de hedendaagse maatschappij is dit essentieël, dus
-          ook voor u.
-        </p>
-        <span id="services__line" />
-        <table id="services__items">
-          <tbody>
-            <tr id="services__items__1">
-              <th>Websites</th>
-              <td>
-                Maken wij met behulp van WordPress maar kunnen ook compleet
-                custom gemaakt worden.
-              </td>
-            </tr>
-            <tr id="services__items__2">
-              <th>Huisstijlen</th>
-              <td>
-                Creëren wij samen met u om uw merk zo goed mogelijk naar voren
-                te laten komen.
-              </td>
-            </tr>
-            <tr id="services__items__3">
-              <th>Teksten</th>
-              <td>Kunnen wij samen met u of voor u schrijven.</td>
-            </tr>
-            <tr id="services__items__4">
-              <th>Hosting</th>
-              <td>
-                Van uw websites bieden wij om ervoor te zorgen dat wij altijd de
-                beste kwaliteit kunnen bieden.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div id="services__desktop">
+          <p id="services__description" className="highlight bold">
+            Onze services zijn gericht op het verbeteren van uw online
+            aanwezigheid. In de hedendaagse maatschappij is dit essentieël, dus
+            ook voor u.
+          </p>
+          <span id="services__line" />
+          <table id="services__items">
+            <tbody>
+              <tr id="services__items__1">
+                <th className="no-padding-top">Websites</th>
+                <td>
+                  Maken wij met behulp van WordPress maar kunnen ook compleet
+                  custom gemaakt worden.
+                </td>
+              </tr>
+              <tr id="services__items__2">
+                <th>Huisstijlen</th>
+                <td>
+                  Creëren wij samen met u om uw merk zo goed mogelijk naar voren
+                  te laten komen.
+                </td>
+              </tr>
+              <tr id="services__items__3">
+                <th>Teksten</th>
+                <td>Kunnen wij samen met u of voor u schrijven.</td>
+              </tr>
+              <tr id="services__items__4">
+                <th>Hosting</th>
+                <td>
+                  Van uw websites bieden wij om ervoor te zorgen dat wij altijd
+                  de beste kwaliteit kunnen bieden.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );
