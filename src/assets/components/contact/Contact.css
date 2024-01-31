@@ -76,6 +76,10 @@
     padding: var(--large-padding) calc(2 * var(--side-margin));
   }
 
+  #contact__image {
+    max-height: 50vh;
+  }
+
   #contact__description {
     padding: 0 0 var(--small-padding) 0;
   }

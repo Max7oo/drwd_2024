@@ -33,7 +33,7 @@ function Services() {
       gsap.to("#services__description", {
         scrollTrigger: {
           trigger: "#services__description",
-          start: "top bottom",
+          start: "-100% bottom",
         },
         y: 0,
         visibility: "visible",
@@ -48,42 +48,82 @@ function Services() {
         },
         width: "100%",
       });
-      gsap.to("#services__items__1", {
-        scrollTrigger: {
-          trigger: "#services__items__1",
-          start: "center bottom",
-        },
-        x: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
-      gsap.to("#services__items__2", {
-        scrollTrigger: {
-          trigger: "#services__items__2",
-          start: "center bottom",
-        },
-        x: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
-      gsap.to("#services__items__3", {
-        scrollTrigger: {
-          trigger: "#services__items__3",
-          start: "center bottom",
-        },
-        x: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
-      gsap.to("#services__items__4", {
-        scrollTrigger: {
-          trigger: "#services__items__4",
-          start: "center bottom",
-        },
-        x: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
+      if (window.innerWidth < 1200) {
+        gsap.to("#services__items__1", {
+          scrollTrigger: {
+            trigger: "#services__items__1",
+            start: "center bottom",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__2", {
+          scrollTrigger: {
+            trigger: "#services__items__2",
+            start: "center bottom",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__3", {
+          scrollTrigger: {
+            trigger: "#services__items__3",
+            start: "center bottom",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__4", {
+          scrollTrigger: {
+            trigger: "#services__items__4",
+            start: "center bottom",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      } else {
+        gsap.to("#services__items__1", {
+          scrollTrigger: {
+            trigger: "#services__items",
+            start: "10% 75%",
+            // markers: true,
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__2", {
+          scrollTrigger: {
+            trigger: "#services__items",
+            start: "20% 75%",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__3", {
+          scrollTrigger: {
+            trigger: "#services__items",
+            start: "30% 75%",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#services__items__4", {
+          scrollTrigger: {
+            trigger: "#services__items",
+            start: "40% 75%",
+          },
+          x: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      }
     }, context);
 
     return () => ctx.revert();

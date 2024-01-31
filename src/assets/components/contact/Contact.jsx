@@ -12,15 +12,6 @@ function Contact() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to("#contact__description", {
-        scrollTrigger: {
-          trigger: "#contact__description",
-          start: "top bottom",
-        },
-        y: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
       gsap.to("#contact__image", {
         scrollTrigger: {
           trigger: "#contact__image",
@@ -31,17 +22,49 @@ function Contact() {
         },
         rotation: -4,
       });
-      gsap.to("#contact__modal__title", {
-        scrollTrigger: {
-          trigger: "#contact__modal__title",
-          start: "top bottom",
-          // scrub: true,
-          // markers: true,
-        },
-        y: 0,
-        visibility: "visible",
-        opacity: 1,
-      });
+      if (window.innerWidth < 1200) {
+        gsap.to("#contact__description", {
+          scrollTrigger: {
+            trigger: "#contact__description",
+            start: "top bottom",
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#contact__modal__title", {
+          scrollTrigger: {
+            trigger: "#contact__modal__title",
+            start: "top bottom",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      } else {
+        gsap.to("#contact__description", {
+          scrollTrigger: {
+            trigger: "#contact__description",
+            start: "-100% 75%",
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+        gsap.to("#contact__modal__title", {
+          scrollTrigger: {
+            trigger: "#contact__description",
+            start: "0% 75%",
+            // scrub: true,
+            // markers: true,
+          },
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+        });
+      }
     }, context);
 
     return () => ctx.revert();

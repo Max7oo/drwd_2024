@@ -59,7 +59,7 @@ function Portfolio() {
     return () => ctx.revert();
   }, []);
 
-  const arrowHandler = (index) => {
+  const arrowHandler = (index, portfolio) => {
     if (directions[index]) {
       const updatedDirections = [...directions];
       updatedDirections[index] = !directions[index];
@@ -85,6 +85,30 @@ function Portfolio() {
           rotate: "-180deg",
         });
         ScrollTrigger.refresh(true);
+        for (let i = 0; i < portfolio.length; i++) {
+          if (i !== index) {
+            gsap.to(`#card${i} .portfolio__item__card__text`, {
+              y: -100,
+              position: "absolute",
+              visibility: "hidden",
+              opacity: 0,
+            });
+            gsap.to(`#card${i} .portfolio__item__card__arrow`, {
+              backgroundColor: "transparent",
+              borderColor: "var(--highlight)",
+              rotate: "0deg",
+            });
+            gsap.to(`#card${i} .portfolio__item__card`, {
+              y: "-100%",
+              position: "absolute",
+            });
+            gsap.to(`#card${i} .portfolio__item__card__title`, {
+              visibility: "hidden",
+              opacity: 0,
+            });
+            ScrollTrigger.refresh(true);
+          }
+        }
       }, context);
 
       return () => ctx.revert();
@@ -105,7 +129,7 @@ function Portfolio() {
           rotate: "0deg",
         });
         gsap.to(`#card${index} .portfolio__item__card`, {
-          y: -100,
+          y: "-100%",
           position: "absolute",
         });
         gsap.to(`#card${index} .portfolio__item__card__title`, {
@@ -125,12 +149,14 @@ function Portfolio() {
         <span />
         Portfolio
       </h2>
-      {portfolio.map((item, index) => {
+      {portfolio.map((item, index, portfolio) => {
         if (index < load) {
           const { title, category, text, img } = item;
           return (
             <div id={`card${index}`} key={index} className="portfolio__item">
-              <img src={img} className="portfolio__item__img" alt={title} />
+              <div className="portfolio__item__img__box">
+                <img src={img} className="portfolio__item__img" alt={title} />
+              </div>
               <div className="portfolio__item__card">
                 <div className="portfolio__item__card__title">
                   <h3>{title}</h3>
@@ -140,7 +166,7 @@ function Portfolio() {
                   src={arrow}
                   className="portfolio__item__card__arrow"
                   alt="Expand"
-                  onClick={() => arrowHandler(index)}
+                  onClick={() => arrowHandler(index, portfolio)}
                 />
               </div>
               <p className="portfolio__item__card__text">{text}</p>

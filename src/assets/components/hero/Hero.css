@@ -54,6 +54,10 @@
     margin: 0px calc(2 * var(--side-margin));
   }
 
+  .third-span {
+    padding-left: var(--side-margin);
+  }
+
   #hero__image {
     aspect-ratio: 16/9;
     background-image: url(../../images/hero__desktop.jpg);
@@ -63,10 +67,21 @@
   #hero__description {
     display: flex;
     gap: var(--gap);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
   }
 
   #hero__description__p1 {
     max-width: 50%;
+  }
+
+  #hero__description__p1,
+  #hero__description__p2,
+  #hero__description__p3 {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 
@@ -85,4 +100,7 @@
     padding: var(--large-padding) calc(2 * var(--side-margin)) 0
       calc(2 * var(--side-margin));
   }
+}
+
+@media only screen and (min-width: 1400px) {
 }

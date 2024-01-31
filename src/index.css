@@ -367,10 +367,20 @@ textarea:focus {
 
 @media only screen and (min-width: 1200px) {
   :root {
-    --large-padding: 200px;
+    --large-padding: 150px;
   }
 
   table tr th.no-padding-top {
     padding-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  h1 span.highlight {
+    font-size: 6.9rem;
   }
 }

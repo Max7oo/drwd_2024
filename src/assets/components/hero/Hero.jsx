@@ -122,39 +122,19 @@ function Hero() {
           },
           rotation: -4,
         });
-        gsap.to("#hero__description__p1", {
-          scrollTrigger: {
-            trigger: "#hero__description",
-            start: "center bottom",
-            // scrub: true,
-            // markers: true,
-          },
-          y: 0,
-          visibility: "visible",
-          opacity: 1,
-        });
-        gsap.to("#hero__description__p2", {
-          scrollTrigger: {
-            trigger: "#hero__description",
-            start: "center bottom",
-            // scrub: true,
-            // markers: true,
-          },
-          y: 0,
-          visibility: "visible",
-          opacity: 1,
-        });
-        gsap.to("#hero__description__p3", {
-          scrollTrigger: {
-            trigger: "#hero__description",
-            start: "center bottom",
-            // scrub: true,
-            // markers: true,
-          },
-          y: 0,
-          visibility: "visible",
-          opacity: 1,
-        });
+        if (window.innerWidth >= 600) {
+          gsap.to("#hero__description", {
+            scrollTrigger: {
+              trigger: "#hero__description",
+              start: "-100% 75%",
+              // scrub: true,
+              // markers: true,
+            },
+            y: 0,
+            visibility: "visible",
+            opacity: 1,
+          });
+        }
       }
     }, context);
 
@@ -177,7 +157,7 @@ function Hero() {
           <span className="second-span">
             <span className="highlight">websites</span>&nbsp;voor&nbsp;
           </span>
-          <span>de MKB-sector</span>
+          <span className="third-span">de MKB-sector</span>
         </h1>
       </section>
       <div id="hero__image" ref={image} />

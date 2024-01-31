@@ -42,7 +42,7 @@
   height: 0;
 }
 
-#footer a:hover {
+#footer__box a:hover {
   background-color: var(--highlight);
   cursor: pointer;
 }
@@ -86,7 +86,12 @@
 
 #footer__info a {
   font-size: var(--p-small);
-  color: var(--text-white);
+  /* color: var(--text-white); */
+}
+
+#footer__mobile a:hover,
+#footer__desktop a:hover {
+  cursor: pointer;
 }
 
 #footer__info p {
@@ -113,8 +118,10 @@
 
 @media only screen and (min-width: 1200px) {
   #footer {
-    padding: var(--large-padding) calc(2 * var(--side-margin))
-      var(--small-padding) calc(2 * var(--side-margin));
+    border-radius: var(--radius) var(--radius) 0px 0px;
+    padding: var(--small-padding) var(--small-padding) var(--small-padding)
+      var(--small-padding);
+    margin: var(--large-padding) var(--side-margin) 0px var(--side-margin);
   }
 
   #footer__box {

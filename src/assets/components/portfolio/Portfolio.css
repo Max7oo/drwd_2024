@@ -12,13 +12,24 @@
 .portfolio__item {
   position: relative;
   margin-bottom: var(--small-padding);
+  overflow: hidden;
+}
+
+.portfolio__item__img__box {
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .portfolio__item__img {
   z-index: 1;
   width: 100%;
 
-  border-radius: var(--radius);
+  transition: transform 0.4s ease;
+  transform-origin: 50% 50%;
+}
+
+.portfolio__item__img:hover {
+  transform: scale(1.1);
 }
 
 .portfolio__item__card {
@@ -53,7 +64,7 @@
   transition: background-color 330ms ease-in-out; */
 }
 
-.portfolio__item__card__title__arrow:hover {
+.portfolio__item__card__arrow:hover {
   cursor: pointer;
   border: 3px solid var(--active);
   background-color: var(--active);
@@ -74,6 +85,11 @@
 #portfolio__load {
   display: flex;
   justify-content: center;
+}
+@media only screen and (min-width: 600px) {
+  .portfolio__item__card__arrow {
+    margin: var(--small-padding);
+  }
 }
 
 @media only screen and (min-width: 1200px) {
