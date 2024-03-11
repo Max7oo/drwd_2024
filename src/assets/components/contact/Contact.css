@@ -88,3 +88,23 @@
     padding: var(--small-padding) var(--small-padding);
   }
 }
+
+@media only screen and (min-width: 1800px) {
+  #contact {
+    padding: var(--large-padding) calc(1.5 * var(--side-margin));
+  }
+
+  #contact__description span {
+    font-size: 2.3rem;
+  }
+
+  #contact__image {
+    max-height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  #contact {
+    padding: var(--large-padding) calc(1.25 * var(--side-margin));
+  }
+}

@@ -345,11 +345,11 @@ textarea:focus {
   }
 }
 
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 800px) {
   :root {
     --side-margin: 10%;
   }
-}
+} */
 
 @media only screen and (min-width: 1000px) {
   :root {
@@ -382,5 +382,32 @@ textarea:focus {
 
   h1 span.highlight {
     font-size: 6.9rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  :root {
+    --side-margin: 15%;
+
+    --p-small: 1.125rem;
+    --p-size: 1.5rem;
+    --p-highlight: 2rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  :root {
+    --side-margin: 20%;
   }
 }

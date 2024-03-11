@@ -153,3 +153,17 @@
     height: 3rem;
   }
 }
+
+@media only screen and (min-width: 1800px) {
+  #footer {
+    margin: var(--large-padding) calc(1.5 * var(--side-margin)) 0px
+      calc(1.5 * var(--side-margin));
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  #footer {
+    margin: var(--large-padding) calc(1.25 * var(--side-margin)) 0px
+      calc(1.25 * var(--side-margin));
+  }
+}

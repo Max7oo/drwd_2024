@@ -17,7 +17,7 @@ function Footer() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (window.innerWidth >= 1200) {
+    if (window.innerWidth >= 1200 && window.innerWidth < 1800) {
       let ctx = gsap.context(() => {
         gsap.to("#footer", {
           scrollTrigger: {
@@ -28,6 +28,38 @@ function Footer() {
             // markers: true,
           },
           padding: "150px 10% 25px 10%",
+          margin: "0px",
+        });
+      }, context);
+      return () => ctx.revert();
+    }
+    if (window.innerWidth >= 1800 && window.innerWidth < 2200) {
+      let ctx = gsap.context(() => {
+        gsap.to("#footer", {
+          scrollTrigger: {
+            trigger: "#footer",
+            start: "-150px 75%",
+            end: "-150px 25%",
+            scrub: true,
+            // markers: true,
+          },
+          padding: "150px 15% 25px 15%",
+          margin: "0px",
+        });
+      }, context);
+      return () => ctx.revert();
+    }
+    if (window.innerWidth >= 2200) {
+      let ctx = gsap.context(() => {
+        gsap.to("#footer", {
+          scrollTrigger: {
+            trigger: "#footer",
+            start: "-150px 75%",
+            end: "-150px 25%",
+            scrub: true,
+            // markers: true,
+          },
+          padding: "150px 20% 25px 20%",
           margin: "0px",
         });
       }, context);
