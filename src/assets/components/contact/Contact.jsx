@@ -85,7 +85,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/send-email', formData);
+      const response = await axios.post('/api/submit_form', formData);
       console.log(response.data);
       // Handle success, show confirmation message, etc.
     } catch (error) {
