@@ -10,6 +10,7 @@ import icon from "../../images/icon.svg";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const context = useRef(null);
@@ -125,7 +126,7 @@ function Footer() {
         <span className="footer__line" />
         <div id="footer__mobile">
           <div id="footer__info">
-            <a>Privacy statement</a>
+            <Link to="/privacy">Privacy statement</Link>
             <p>KvK: 76769852</p>
           </div>
           <div id="footer__credits">

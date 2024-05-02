@@ -38,6 +38,12 @@
   border-radius: var(--radius);
 }
 
+#contact__modal a {
+  font-weight: 300;
+  font-size: var(--p-small);
+  color: var(--bg-black);
+}
+
 #contact__modal__title {
   color: var(--text-white);
   margin-top: 0.83em;

@@ -4,6 +4,7 @@ import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Link } from "react-router-dom";
 
 import "./NavBar.css";
 import logo from "../../images/icon.svg";
@@ -102,7 +103,9 @@ function NavBar() {
   return (
     <nav ref={context}>
       <div id="nav" ref={nav}>
-        <img src={logo} alt="De Ruiter Webdevelopment Logo" />
+        <Link to="/">
+          <img src={logo} alt="De Ruiter Webdevelopment Logo" />
+        </Link>
         {/* <button className="primary">Contact</button> */}
         <button id="nav__button" className="secondary" onClick={() => menu()}>
           {openMenu ? <p>Menu</p> : <p>Close</p>}

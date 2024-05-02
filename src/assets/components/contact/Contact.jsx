@@ -100,8 +100,23 @@ function Contact() {
           placeholder="Type hier uw bericht"
         />
         <label>
-          This site is protected by reCAPTCHA and the Google Privacy Policy and
-          Terms of Service apply.
+          This site is protected by reCAPTCHA and the{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Google Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
         </label>
         <button className="tertiary">Inspireer ons</button>
       </div>
