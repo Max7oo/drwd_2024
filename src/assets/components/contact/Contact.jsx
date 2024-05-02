@@ -1,11 +1,19 @@
 import "./Contact.css";
 import contact from "../../images/bas-en-max.jpg";
+import axios from 'axios';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
   const context = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -70,6 +78,22 @@ function Contact() {
     return () => ctx.revert();
   }, []);
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/send-email', formData);
+      console.log(response.data);
+      // Handle success, show confirmation message, etc.
+    } catch (error) {
+      console.error('Error sending email:', error);
+      // Handle error, show error message, etc.
+    }
+  };
+
   return (
     <section id="contact" ref={context}>
       <div>
@@ -85,40 +109,46 @@ function Contact() {
           <span />
           Ben jij het volgende verhaal?
         </h2>
-        <input type="text" id="name" name="name" placeholder="Uw naam" />
-        <input type="email" id="email" name="email" placeholder="Uw email" />
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          placeholder="Onderwerp"
-        />
-        <textarea
-          rows="3"
-          id="message"
-          name="message"
-          placeholder="Type hier uw bericht"
-        />
-        <label>
-          This site is protected by reCAPTCHA and the{" "}
-          <a
-            href="https://policies.google.com/privacy"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Google Privacy Policy
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://policies.google.com/terms"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Terms of Service
-          </a>{" "}
-          apply.
-        </label>
-        <button className="tertiary">Inspireer ons</button>
+        <form onSubmit={handleSubmit}>
+          <input type="text" id="name" name="name" placeholder="Uw naam" value={formData.name} onChange={handleChange}/>
+          <input type="email" id="email" name="email" placeholder="Uw email" value={formData.email} onChange={handleChange} />
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Onderwerp"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          <textarea
+            rows="3"
+            id="message"
+            name="message"
+            placeholder="Type hier uw bericht"
+            value={formData.message}
+            onChange={handleChange}
+          />
+          <label>
+            This site is protected by reCAPTCHA and the{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </label>
+          <button className="tertiary" type="submit">Inspireer ons</button>
+        </form>  
       </div>
     </section>
   );
