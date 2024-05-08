@@ -30,30 +30,6 @@ function Portfolio() {
         visibility: "visible",
         opacity: 1,
       });
-      // portfolio.forEach(function callback(value, index) {
-      //   gsap.to(`#card${index} .portfolio__item__card`, {
-      //     scrollTrigger: {
-      //       trigger: `#card${index} .portfolio__item__card`,
-      //       start: "top center",
-      //       // scrub: true,
-      //       // markers: true,
-      //       toggleActions: "play none none reverse",
-      //     },
-      //     y: 0,
-      //     position: "relative",
-      //   });
-      //   gsap.to(`#card${index} .portfolio__item__card__title`, {
-      //     scrollTrigger: {
-      //       trigger: `#card${index} .portfolio__item__card`,
-      //       start: "top center",
-      //       // scrub: true,
-      //       // markers: true,
-      //       toggleActions: "play none none reverse",
-      //     },
-      //     visibility: "visible",
-      //     opacity: 1,
-      //   });
-      // });
     }, context);
 
     return () => ctx.revert();
@@ -154,9 +130,7 @@ function Portfolio() {
           const { title, category, text, img } = item;
           return (
             <div id={`card${index}`} key={index} className="portfolio__item">
-              <div className="portfolio__item__img__box">
-                <img src={img} className="portfolio__item__img" alt={title} />
-              </div>
+              <img src={img} className="portfolio__item__img" alt={title} />
               <div className="portfolio__item__card">
                 <div className="portfolio__item__card__title">
                   <h3>{title}</h3>

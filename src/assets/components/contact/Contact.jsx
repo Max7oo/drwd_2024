@@ -1,6 +1,6 @@
 import "./Contact.css";
 import contact from "../../images/bas-en-max.jpg";
-import axios from 'axios';
+import axios from "axios";
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const context = useRef(null);
@@ -64,7 +64,7 @@ function Contact() {
         gsap.to("#contact__modal__title", {
           scrollTrigger: {
             trigger: "#contact__description",
-            start: "0% 75%",
+            start: "-100% 75%",
             // scrub: true,
             // markers: true,
           },
@@ -85,11 +85,11 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/submit_form', formData);
+      const response = await axios.post("/api/submit_form", formData);
       console.log(response.data);
       // Handle success, show confirmation message, etc.
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       // Handle error, show error message, etc.
     }
   };
@@ -110,8 +110,22 @@ function Contact() {
           Ben jij het volgende verhaal?
         </h2>
         <form onSubmit={handleSubmit}>
-          <input type="text" id="name" name="name" placeholder="Uw naam" value={formData.name} onChange={handleChange}/>
-          <input type="email" id="email" name="email" placeholder="Uw email" value={formData.email} onChange={handleChange} />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Uw naam"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Uw email"
+            value={formData.email}
+            onChange={handleChange}
+          />
           <input
             type="text"
             id="subject"
@@ -147,8 +161,10 @@ function Contact() {
             </a>{" "}
             apply.
           </label>
-          <button className="tertiary" type="submit">Inspireer ons</button>
-        </form>  
+          <button className="tertiary" type="submit">
+            Inspireer ons
+          </button>
+        </form>
       </div>
     </section>
   );
