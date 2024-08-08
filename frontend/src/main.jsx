@@ -14,12 +14,8 @@ const router = createBrowserRouter([
   {
     path: "privacy",
     element: <PrivacyPage />,
-  },
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
-]);
+  }
+],{ basename: "/drwd_2024"});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

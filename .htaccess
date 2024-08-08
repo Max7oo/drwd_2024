@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /
-RewriteRule ^api/?(.*)$ /backend/index.php [L,QSA]
+RewriteBase /backend
+RewriteRule ^api/?(.*)$ /drwd_2024/backend/index.php [L,QSA]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . /frontend/index.html [L]
