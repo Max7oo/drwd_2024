@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/frontend/src/assets/images/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta name="description" content="Dit is de portfolio website van De Ruiter Webdevelopment"/>
+		<meta name="keywords" content="De Ruiter Webdevelopment, Portfolio, Bas, Max, Website, Webdevelopment"/>
+    <title>De Ruiter Webdevelopment</title>
+
+    <!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178898505-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			
+			gtag("js", new Date());
+
+			gtag("config", "UA-178898505-1", { 'anonymize_ip':true});
+		</script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/frontend/src/main.jsx"></script>    
   </body>
+  <div hidden id="recaptcha-token">6LeSwCAcAAAAAFiJhDkF9i-3hlmHl_cUHDm4eB7N</div>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeSwCAcAAAAAFiJhDkF9i-3hlmHl_cUHDm4eB7N"></script>
 </html>
