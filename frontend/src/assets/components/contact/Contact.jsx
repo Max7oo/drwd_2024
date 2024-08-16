@@ -5,8 +5,10 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"; // Correct package import
 
 function Contact() {
+  const { executeRecaptcha } = useGoogleReCaptcha(); // Initialize reCAPTCHA
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -84,8 +86,24 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if reCAPTCHA is ready
+    if (!executeRecaptcha) {
+      console.error("reCAPTCHA not yet available");
+      return;
+    }
+
     try {
-      const response = await axios.post("http://127.0.0.1/drwd_2024/api/submit_form", formData);
+      // Execute reCAPTCHA and get the token
+      const recaptchaToken = await executeRecaptcha("submit");
+
+      // Append the token to the form data
+      const formDataWithToken = { ...formData, recaptchaToken };
+
+      const response = await axios.post(
+        "http://127.0.0.1/drwd_2024/api/submit_form",
+        formDataWithToken
+      );
       console.log(response.data);
       // Handle success, show confirmation message, etc.
     } catch (error) {
