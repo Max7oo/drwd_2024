@@ -102,6 +102,7 @@ function Contact() {
 
       const response = await axios.post(
         "http://127.0.0.1/drwd_2024/api/submit_form",
+        // "api/submit_form",
         formDataWithToken
       );
       console.log(response.data);

@@ -6,28 +6,53 @@ use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
 use GuzzleHttp\Client;
-
+use Slim\Exception\HttpNotFoundException;
+use Slim\Exception\HttpMethodNotAllowedException;
 
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/vendor/autoload.php';
-
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 $app = AppFactory::create();
+// $app->setBasePath('/api');
 $app->setBasePath('/drwd_2024/api');
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+$app->addRoutingMiddleware();
+
 // Add error middleware
-$app->addErrorMiddleware(true, true, true);
+$errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Parse JSON, form data, and XML
 $app->addBodyParsingMiddleware();
 
-$app->addRoutingMiddleware();
+$errorMiddleware->setDefaultErrorHandler(function (
+    Request $request,
+    Throwable $exception,
+    bool $displayErrorDetails,
+    bool $logErrors,
+    bool $logErrorDetails
+) use ($app): Response {
+    $response = $app->getResponseFactory()->createResponse();
 
-$app->options('/{routes:.+}', function ($request, $response, $args) {
-    return $response;
+    if ($exception instanceof HttpNotFoundException) {
+        $response->getBody()->write("<h1>404 Not Found</h1><p>The requested page could not be found.</p>");
+        return $response->withHeader('Content-Type', 'text/html')->withStatus(404);
+    }
+
+    if ($exception instanceof HttpMethodNotAllowedException) {
+        $allowed = implode(', ', $exception->getAllowedMethods());
+        $response->getBody()->write("<h1>405 Method Not Allowed</h1><p>Allowed methods: $allowed</p>");
+        return $response->withHeader('Content-Type', 'text/html')->withStatus(405);
+    }
+
+    // Generic error fallback
+    $response->getBody()->write("<h1>500 Internal Server Error</h1><p>An unexpected error occurred.</p>");
+    return $response->withHeader('Content-Type', 'text/html')->withStatus(500);
 });
 
 $app->add(function (Request $request, RequestHandlerInterface $handler) use ($app): Response {
@@ -36,30 +61,12 @@ $app->add(function (Request $request, RequestHandlerInterface $handler) use ($ap
     } else {
         $response = $handler->handle($request);
     }
-
-    //TODO disable in production
-    $response = $response
-        ->withHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5173')
-        ->withHeader('Access-Control-Allow-Headers', '*')
-        ->withHeader('Access-Control-Allow-Methods', '*');
     
     if (ob_get_contents()) {
         ob_clean();
     }
 
     return $response;  
-});
-
-$app->get('/', function (Request $request, Response $response) {
-    $response->getBody()->write("Hello world!");
-    $recaptchaToken = "asdfadsf";
-    if (!$recaptchaToken || !isValidCaptcha($recaptchaToken)) {
-        $response->getBody()->write("Invalid recaptcha");
-    } else {
-        $response->getBody()->write("Boo boo");
-    }
-
-    return $response;
 });
 
 $app->post('/submit_form', function (Request $request, Response $response) {
@@ -74,9 +81,9 @@ $app->post('/submit_form', function (Request $request, Response $response) {
     $message    = $data['message'] ?? '';
     $body       = "Naam: $name\nEmail: $email\nOnderwerp: $subject\nBericht: $message";
 
-    $recaptchaToken = $data['token'];
+    $recaptchaToken = $data['recaptchaToken'];
 
-    if (!$recaptchaToken || !$this->isValidCaptcha($recaptchaToken)) {
+    if (!$recaptchaToken || !isValidCaptcha($recaptchaToken)) {
         $response->getBody()->write("Invalid recaptcha");
         return $response;
     } else {
@@ -108,7 +115,7 @@ $app->post('/submit_form', function (Request $request, Response $response) {
 
         $data = [
             'secret'    => $_ENV['RECAPTCHA_SECRET'],
-            'response'  => "6LeSwCAcAAAAAFiJhDkF9i-3hlmHl_cUHDm4eB7N"//$token
+            'response'  => $token
         ];
 
         $response = $client->request('POST', '/recaptcha/api/siteverify', [
@@ -117,9 +124,6 @@ $app->post('/submit_form', function (Request $request, Response $response) {
         );
 
         $body = json_decode($response->getBody()->getContents(), true);
-
-        print_r($body);
-        die();
         
         return $body['success'];
     }

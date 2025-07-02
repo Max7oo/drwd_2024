@@ -19,6 +19,7 @@ const router = createBrowserRouter(
     },
   ],
   { basename: "/drwd_2024" }
+  // { basename: "/" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(

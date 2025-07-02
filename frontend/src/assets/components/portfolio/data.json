@@ -2,55 +2,55 @@
   {
     "title": "VDS Pompen",
     "category": "WEBSITE",
-    "text": "is een leverancier van industriële pompen aan verschillende multinationals en voert daarnaast onderhoudswerkzaamheden uit. De website is te vinden op www.vdspompen.nl.",
-    "img": "frontend/src/assets/images/portfolio/vdspompen.jpg"
+    "text": "is een leverancier van industriële pompen aan verschillende multinationals en voert daarnaast onderhoudswerkzaamheden uit. De website is te vinden op <a href=https://www.vdspompen.nl target=_blank>www.vdspompen.nl</a>.",
+    "img": "assets/vdspompen.jpg"
   },
   {
     "title": "KITWERKEN Noord-Oost Nederland",
     "category": "WEBSITE",
-    "text": "biedt gespecialiseerde diensten aan op het gebied van kitwerk, gericht op het creëren van waterdichte en luchtdichte afwerkingen. De website is te vinden op www.kitwerkenn.nl.",
-    "img": "frontend/src/assets/images/portfolio/kitwerkenn.jpg"
+    "text": "biedt gespecialiseerde diensten aan op het gebied van kitwerk, gericht op het creëren van waterdichte en luchtdichte afwerkingen. De website is te vinden op <a href=https://www.kitwerkenn.nl target=_blank>www.kitwerkenn.nl</a>.",
+    "img": "assets/kitwerkenn.jpg"
   },
   {
     "title": "RIWA Techniek",
     "category": "WEBSITE",
-    "text": "is gespecialiseerd in technische installatiewerkzaamheden in uw bestaande- en nieuwbouw panden. Dit doen zij door het leveren en installeren van groepenkasten, het aanleggen van stroom, monteren van vloerverwarming, plaatsen van CV-installaties of het monteren van waterontharders. De website is te vinden op www.riwa-techniek.nl.",
-    "img": "frontend/src/assets/images/portfolio/riwatechniek.jpg"
+    "text": "is gespecialiseerd in technische installatiewerkzaamheden in uw bestaande- en nieuwbouw panden. Dit doen zij door het leveren en installeren van groepenkasten, het aanleggen van stroom, monteren van vloerverwarming, plaatsen van CV-installaties of het monteren van waterontharders. De website is te vinden op <a href=https://www.riwa-techniek.nl target=_blank>www.riwa-techniek.nl</a>.",
+    "img": "assets/riwatechniek.jpg"
   },
   {
     "title": "Bandencentrum Bloemsma",
     "category": "WEBSITE + REBRANDING",
-    "text": "is een garage die zich specialiseert in al uw maatwerk voor banden. Dit houdt niet alleen in dat zij de perfecte set banden en velgen onder uw bolide zetten, maar deze ook uitlijnen en balanceren met geavanceerde technologie, uw velgen repareren en overige reparaties doen. De vakkundige werknemers doen dit allemaal terwijl u rustig verder kunt werken onder het genot van een bak koffie in de nieuwe kantine. Check de website op www.bandencentrumbloemsma.nl.",
-    "img": "frontend/src/assets/images/portfolio/bandencentrumbloemsma.jpg"
+    "text": "is een garage die zich specialiseert in al uw maatwerk voor banden. Dit houdt niet alleen in dat zij de perfecte set banden en velgen onder uw bolide zetten, maar deze ook uitlijnen en balanceren met geavanceerde technologie, uw velgen repareren en overige reparaties doen. De vakkundige werknemers doen dit allemaal terwijl u rustig verder kunt werken onder het genot van een bak koffie in de nieuwe kantine. Check de website op <a href=https://www.bandencentrumbloemsma.nl target=_blank>www.bandencentrumbloemsma.nl</a>.",
+    "img": "assets/bandencentrumbloemsma.jpg"
   },
   {
     "title": "Eten & Co",
     "category": "WEBSITE + BOOKING SYSTEM",
-    "text": "is een wereldrestaurant gevestigd in Groningen. Eten&Co laat zich inspireren door gerechten van over de hele wereld en bereidt deze met de grootst mogelijke zorg en aandacht voor de gasten. Deze gerechten worden aangeboden in buffetvorm. Benieuwd naar de website? Bezoek dan www.etenencogroningen.nl.",
-    "img": "frontend/src/assets/images/portfolio/etenenco.jpg"
+    "text": "is een wereldrestaurant gevestigd in Groningen. Eten&Co laat zich inspireren door gerechten van over de hele wereld en bereidt deze met de grootst mogelijke zorg en aandacht voor de gasten. Deze gerechten worden aangeboden in buffetvorm. Benieuwd naar de website? Bezoek dan <a href=https://www.etenencogroningen.nl target=_blank>www.etenencogroningen.nl</a>.",
+    "img": "assets/etenenco.jpg"
   },
   {
     "title": "Chr. Muziekvereniging Harmonie Marum",
     "category": "WEBSITE",
-    "text": "is een gezellige vereniging die graag het leven in Marum van een muzikaal tintje voorziet. Bij feestelijke en sportieve evenementen zijn ze erbij, maar ook bij herdenkingsplechtigheden. Daarnaast organiseren zij concerten, dus aan variatie geen gebrek! Neem eens een kijkje op www.harmoniemarum.nl.",
-    "img": "frontend/src/assets/images/portfolio/harmoniemarum.jpg"
+    "text": "is een gezellige vereniging die graag het leven in Marum van een muzikaal tintje voorziet. Bij feestelijke en sportieve evenementen zijn ze erbij, maar ook bij herdenkingsplechtigheden. Daarnaast organiseren zij concerten, dus aan variatie geen gebrek! Neem eens een kijkje op <a href=https://www.harmoniemarum.nl target=_blank>www.harmoniemarum.nl</a>.",
+    "img": "assets/harmoniemarum.jpg"
   },
   {
     "title": "CovOosten",
     "category": "WEBSITE + REBRANDING",
-    "text": "is een professioneel coaching bedrijf dat persoonlijke coaching aanbiedt. Tijdens het coachtraject wordt er samen gezocht naar praktische manieren die kunnen helpen bij het oplossen van vraagstukken over werk of privéleven. Lijkt je dit interessant en/of wil je een kijkje nemen op de website, ga naar www.covo-coachingenverwijzing.nl.",
-    "img": "frontend/src/assets/images/portfolio/covocoachingenverwijzing.jpg"
+    "text": "is een professioneel coaching bedrijf dat persoonlijke coaching aanbiedt. Tijdens het coachtraject wordt er samen gezocht naar praktische manieren die kunnen helpen bij het oplossen van vraagstukken over werk of privéleven. Lijkt je dit interessant en/of wil je een kijkje nemen op de website, ga naar <a href=https://www.covo-coachingenverwijzing.nl target=_blank>www.covo-coachingenverwijzing.nl</a>.",
+    "img": "assets/covocoachingenverwijzing.jpg"
   },
   {
     "title": "Levensschrijver",
     "category": "WEBSITE + REBRANDING",
-    "text": "is een persoonlijke blog van Roulien van der Woude waar zij levensverhalen publiceert die zij schrijft voor uitvaarten of grote levensveranderingen namens haar klanten. www.levensschrijver.nl is de eerste website die De Ruiter Webdevelopment heeft ontwikkeld.",
-    "img": "frontend/src/assets/images/portfolio/levensschrijver.jpg"
+    "text": "is een persoonlijke blog van Roulien van der Woude waar zij levensverhalen publiceert die zij schrijft voor uitvaarten of grote levensveranderingen namens haar klanten. <a href=https://www.levensschrijver.nl target=_blank>www.levensschrijver.nl</a> is de eerste website die De Ruiter Webdevelopment heeft ontwikkeld.",
+    "img": "assets/levensschrijver.jpg"
   },
   {
     "title": "BRM Productions",
     "category": "WEBSITE + REBRANDING",
-    "text": "is een bedrijf met een groot aanbod aan licht-, audio- en videoapparatuur voor verhuur en verkoop aan evenementen, theater en b2b. BRM heeft een erg actief team dat graag met de klant meedenkt van ontwerp tot en met realisatie van een event. Bezoek www.brm-productions.nl als u benieuwd bent naar hun uitgebreide portfolio.",
-    "img": "frontend/src/assets/images/portfolio/brmproductions.jpg"
+    "text": "is een bedrijf met een groot aanbod aan licht-, audio- en videoapparatuur voor verhuur en verkoop aan evenementen, theater en b2b. BRM heeft een erg actief team dat graag met de klant meedenkt van ontwerp tot en met realisatie van een event. Bezoek <a href=https://www.brm-productions.nl target=_blank>www.brm-productions.nl</a> als u benieuwd bent naar hun uitgebreide portfolio.",
+    "img": "assets/brmproductions.jpg"
   }
 ]
