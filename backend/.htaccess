@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Allow only index.php to be accessed directly
+RewriteCond %{REQUEST_URI} !^/backend/index\.php$
+# Deny all other requests to files or folders inside backend/
+RewriteRule ^.*$ - [F,L]
