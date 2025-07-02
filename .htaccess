@@ -1,6 +1,13 @@
 RewriteEngine On
-RewriteBase /backend
-RewriteRule ^api/?(.*)$ /drwd_2024/backend/index.php [L,QSA]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /frontend/index.html [L]
+RewriteBase /
+
+# API routing: /api/... → /backend/index.php
+RewriteRule ^api/?(.*)$ backend/index.php [L,QSA]
+
+# Serve static files and directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Everything else goes to React index.html (SPA routing)
+RewriteRule ^ index.html [L]
