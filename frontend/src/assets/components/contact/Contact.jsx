@@ -179,7 +179,10 @@ function Contact() {
             </a>{" "}
             apply.
           </label>
-          <button className="tertiary" type="submit">
+          <button className="tertiary" class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit' type="submit">
             Inspireer ons
           </button>
         </form>
