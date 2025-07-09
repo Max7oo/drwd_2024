@@ -152,10 +152,7 @@ function Contact() {
         <img src={contact} alt="Bas & Max" id="contact__image" />
       </div>
       <div id="contact__modal">
-        <h2 id="contact__modal__title">
-          <span />
-          Ben jij het volgende verhaal?
-        </h2>
+        <h2 id="contact__modal__title">Ben jij het volgende verhaal?</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -165,7 +162,7 @@ function Contact() {
             value={formData.name}
             onChange={handleChange}
           />
-          {errors.name && <span className="error">{errors.name}</span>}
+          {errors.name && <label className="error">{errors.name}</label>}
 
           <input
             type="email"
@@ -175,7 +172,7 @@ function Contact() {
             value={formData.email}
             onChange={handleChange}
           />
-          {errors.email && <span className="error">{errors.email}</span>}
+          {errors.email && <label className="error">{errors.email}</label>}
 
           <input
             type="text"
@@ -185,7 +182,7 @@ function Contact() {
             value={formData.subject}
             onChange={handleChange}
           />
-          {errors.subject && <span className="error">{errors.subject}</span>}
+          {errors.subject && <label className="error">{errors.subject}</label>}
 
           <textarea
             rows="3"
@@ -195,7 +192,7 @@ function Contact() {
             value={formData.message}
             onChange={handleChange}
           />
-          {errors.message && <span className="error">{errors.message}</span>}
+          {errors.message && <label className="error">{errors.message}</label>}
           <label>
             This site is protected by reCAPTCHA and the{" "}
             <a

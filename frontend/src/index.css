@@ -198,8 +198,7 @@ a:hover:after {
   transform-origin: bottom left;
 }
 
-label,
-span {
+label {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 300;
