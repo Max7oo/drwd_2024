@@ -198,7 +198,8 @@ a:hover:after {
   transform-origin: bottom left;
 }
 
-label {
+label,
+span {
   font-family: "Neue Haas Grotesk Display Pro", Inter, system-ui, Avenir,
     Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -209,6 +210,16 @@ label {
 /* UI elements */
 .container {
   position: relative;
+}
+
+.error {
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+
+.success {
+  color: green;
+  margin-bottom: 1em;
 }
 
 .black-background {

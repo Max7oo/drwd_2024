@@ -149,26 +149,31 @@ function Services() {
               <tr id="services__items__1">
                 <th className="no-padding-top">Websites</th>
                 <td>
-                  Maken wij met behulp van WordPress maar kunnen ook compleet
-                  custom gemaakt worden.
+                  Van maatwerk websites tot slimme oplossingen in WordPress,
+                  Shopify en Squarespace – wij bouwen digitale ervaringen die
+                  werken.
                 </td>
               </tr>
               <tr id="services__items__2">
                 <th>Huisstijlen</th>
                 <td>
-                  Creëren wij samen met u om uw merk zo goed mogelijk naar voren
-                  te laten komen.
+                  Wij ontwikkelen samen met u een doordachte huisstijl die uw
+                  merk optimaal positioneert.
                 </td>
               </tr>
               <tr id="services__items__3">
                 <th>Teksten</th>
-                <td>Kunnen wij samen met u of voor u schrijven.</td>
+                <td>
+                  Professionele teksten – samen met u of volledig verzorgd door
+                  ons.
+                </td>
               </tr>
               <tr id="services__items__4">
                 <th>Hosting</th>
                 <td>
-                  Van uw websites bieden wij om ervoor te zorgen dat wij altijd
-                  de beste kwaliteit kunnen bieden.
+                  Wij bieden hoogwaardige hosting voor uw websites, zodat u
+                  altijd verzekerd bent van de beste kwaliteit en optimale
+                  prestaties.
                 </td>
               </tr>
             </tbody>

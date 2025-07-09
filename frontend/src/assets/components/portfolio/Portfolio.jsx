@@ -143,7 +143,10 @@ function Portfolio() {
                   onClick={() => arrowHandler(index, portfolio)}
                 />
               </div>
-              <p className="portfolio__item__card__text" dangerouslySetInnerHTML={{ __html: text }}></p>
+              <p
+                className="portfolio__item__card__text"
+                dangerouslySetInnerHTML={{ __html: text }}
+              ></p>
             </div>
           );
         }

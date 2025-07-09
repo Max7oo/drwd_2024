@@ -15,6 +15,10 @@ function Contact() {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const context = useRef(null);
 
@@ -84,32 +88,56 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Naam is vereist.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is vereist.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Ongeldig e-mailadres.";
+    }
+    if (!formData.subject.trim()) newErrors.subject = "Onderwerp is vereist.";
+    if (!formData.message.trim()) newErrors.message = "Bericht is vereist.";
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccessMessage("");
+    setErrorMessage("");
+    const validationErrors = validate();
 
-    // Check if reCAPTCHA is ready
-    if (!executeRecaptcha) {
-      console.error("reCAPTCHA not yet available");
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    try {
-      // Execute reCAPTCHA and get the token
-      const recaptchaToken = await executeRecaptcha("submit");
+    if (!executeRecaptcha) {
+      setErrorMessage("reCAPTCHA is nog niet beschikbaar.");
+      return;
+    }
 
-      // Append the token to the form data
+    setIsSubmitting(true);
+    setErrors({});
+
+    try {
+      const recaptchaToken = await executeRecaptcha("submit");
       const formDataWithToken = { ...formData, recaptchaToken };
 
-      const response = await axios.post(
+      await axios.post(
         "http://127.0.0.1/drwd_2024/api/submit_form",
-        // "api/submit_form",
         formDataWithToken
       );
-      console.log(response.data);
-      // Handle success, show confirmation message, etc.
+
+      setSuccessMessage("Bedankt voor je bericht! We nemen snel contact op.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error("Error sending email:", error);
-      // Handle error, show error message, etc.
+      setErrorMessage(
+        "Er is iets misgegaan bij het verzenden. Probeer het later opnieuw."
+      );
+      console.error("Submit error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -137,6 +165,8 @@ function Contact() {
             value={formData.name}
             onChange={handleChange}
           />
+          {errors.name && <span className="error">{errors.name}</span>}
+
           <input
             type="email"
             id="email"
@@ -145,6 +175,8 @@ function Contact() {
             value={formData.email}
             onChange={handleChange}
           />
+          {errors.email && <span className="error">{errors.email}</span>}
+
           <input
             type="text"
             id="subject"
@@ -153,6 +185,8 @@ function Contact() {
             value={formData.subject}
             onChange={handleChange}
           />
+          {errors.subject && <span className="error">{errors.subject}</span>}
+
           <textarea
             rows="3"
             id="message"
@@ -161,6 +195,7 @@ function Contact() {
             value={formData.message}
             onChange={handleChange}
           />
+          {errors.message && <span className="error">{errors.message}</span>}
           <label>
             This site is protected by reCAPTCHA and the{" "}
             <a
@@ -180,14 +215,15 @@ function Contact() {
             </a>{" "}
             apply.
           </label>
+          {successMessage && <p className="success">{successMessage}</p>}
+          {errorMessage && <p className="error">{errorMessage}</p>}
+
           <button
             className="g-recaptcha tertiary"
-            data-sitekey="reCAPTCHA_site_key"
-            data-callback="onSubmit"
-            data-action="submit"
             type="submit"
+            disabled={isSubmitting}
           >
-            Inspireer ons
+            {isSubmitting ? "Verzenden..." : "Inspireer ons"}
           </button>
         </form>
       </div>
