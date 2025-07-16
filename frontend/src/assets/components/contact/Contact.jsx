@@ -212,8 +212,8 @@ function Contact() {
             </a>{" "}
             apply.
           </label>
-          {successMessage && <p className="success">{successMessage}</p>}
-          {errorMessage && <p className="error">{errorMessage}</p>}
+          {<p className="success">Succes{successMessage}</p>}
+          {<p className="error-submit">Error{errorMessage}</p>}
 
           <button
             className="g-recaptcha tertiary"

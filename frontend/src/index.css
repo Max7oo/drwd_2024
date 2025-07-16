@@ -212,7 +212,12 @@ label {
 }
 
 .error {
-  color: #fff;
+  color: var(--active);
+  margin-bottom: 0.5em;
+}
+
+.error-submit {
+  color: white;
   margin-bottom: 0.5em;
 }
 
