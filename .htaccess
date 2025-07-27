@@ -11,3 +11,15 @@ RewriteRule ^ - [L]
 
 # Everything else goes to React index.html (SPA routing)
 RewriteRule ^ index.html [L]
+
+<IfModule mod_headers.c>
+    # --- Content Security Policy ---
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.drwd.nl  https://www.googletagmanager.com https://www.google.com https://www.google-analytics.com https://www.gstatic.com 'sha256-VaZm5ZGfiyNcggdeXCpZDf5V9LRcMN7evCGvOZnuh/I='; style-src 'self' 'unsafe-hashes' 'sha256-BSTKIYoPCaklkJ9YS/ZVYuKW8e+DG8jZJCXznBzHjgg='; frame-ancestors 'none'; img-src 'self' https://www.google-analytics.com data:; connect-src 'self' https://region1.google-analytics.com https://www.google-analytics.com https://www.google.com; frame-src https://www.google.com"
+    # --- Anti-Clickjacking (legacy) ---
+    Header always set X-Frame-Options "DENY"
+
+    # --- Additional optional security headers ---
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
