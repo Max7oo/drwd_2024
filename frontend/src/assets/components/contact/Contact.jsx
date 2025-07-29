@@ -126,6 +126,7 @@ function Contact() {
 
       await axios.post(
         "http://127.0.0.1/drwd_2024/api/submit_form",
+        //"api/submit_form",
         formDataWithToken
       );
 
@@ -212,8 +213,8 @@ function Contact() {
             </a>{" "}
             apply.
           </label>
-          {<p className="success">Succes{successMessage}</p>}
-          {<p className="error-submit">Error{errorMessage}</p>}
+          {<p className="success">{successMessage}</p>}
+          {<p className="error-submit">{errorMessage}</p>}
 
           <button
             className="g-recaptcha tertiary"
