@@ -136,7 +136,7 @@ function Footer() {
         </div>
         <div id="footer__desktop">
           <p>© De Ruiter Webdevelopment</p>
-          <a>Privacy statement</a>
+          <Link to="/privacy">Privacy statement</Link>
           <p>KvK: 76769852</p>
           <img src={icon} alt="De Ruiter Webdevelopment" />
         </div>
